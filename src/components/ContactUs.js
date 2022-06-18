@@ -37,7 +37,6 @@ function ContactT () {
       <Nav.Link onClick={() => navigate('/platform')}>Platform</Nav.Link>
       <Nav.Link onClick={() => navigate('/partnership')}>Partnership</Nav.Link>
       <Nav.Link onClick={() => navigate('/contactus')}>Contact us</Nav.Link>
- 
     </Nav>
     <Nav id = 'fr'>
     <NavDropdown title="My Account" id="collasible-nav-dropdown" >

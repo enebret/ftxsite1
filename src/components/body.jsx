@@ -235,7 +235,6 @@ function Body () {
           </Col>
           <Col md={{ span: 4}}>
           <Card style={{ marginTop: '3%'}}>
-      
       <Card.Body>
       
       <Card.Img variant="top" src="/pix/kate.png" style={{ height: 'auto', width: 'auto', marginLeft: '25%'}}/>
