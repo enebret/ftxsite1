@@ -1,0 +1,37 @@
+<freq name='helen />
+{props.name} // to reference the name property inside the component
+//id can be a number or string
+//update book info, id here is the book title or any other variable, and the returned page is the page were new details are inputed for update
+//for url params, the user will normally have to type in the id param alongside the url. id can be a number or string
+// after filling in the details of a new book, this.props.history.push('/') redirects the page to the homepage automatically
+link to the signin/signup component will be adjusted from the header component 
+color codes ; black = #000000, white = #ffffff
+{/*only make this type of comments inside components*/}
+npx create-react-app <app-name> ::to create react app
+11) use text-align to move divs to particular positions in the screen
+12. use width to ajust responsive screen 
+13. use percentage not pixels to move elements across screen
+!4. always use capital letters to when creating a component. also use .jsx extension for react scripts to prevent error
+15. Install react-router-dom in other to use routes
+16. use display grid to show testimonials
+17> when importing files within a component eg css inside a js folder in the same folder, ensure to use the relative path eg ./login.css
+18. when using input tags in react, ensure to put a closing tag
+19. always use percentage for element sizing and movement
+20. send confirmation email after registration
+21. use transparent background with border color for buttons and hover green background with no border color
+22. insert table component within a div after importing to body.js. pad div by 20%.
+23. every other page including about us, and contact pages will come with the same header and footer 
+24. to test a script, you can run it individually on a different shell
+25. use border radius to shape button edges
+26. ensure that when importing new functions invogue the function inside the use-effect hook first before passing to state
+27. use setinterval inside the use-effect hook to make price data dynamic
+28. set table width at 100%, put in a div element and pad div at 5%
+29. use css media query to manage screen size across devices
+30. cadright (Change language from can-be to should-be (instructional),prd summary should be under registration )
+31. to reduce the table width, change the padding in the div element
+32. this.props.match.params.id ,this is the id passed as the parameter to the url route (eg user/1 where 1 = id) <Route path='/show-book/:id' component={ShowBookDetails} /> id parameter is passed to the ShowBookDetails component as a prop. 
+33. use alert() to display backend respond
+34. signin/login will use the get rest parameter with user details as payload
+35. when exporting use var not let to hold an arguement
+36. to increase the width of a table cell, use width in pixels
+37. css takes priority of css properties wrapped under a query rather than css properties under no query

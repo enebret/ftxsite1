@@ -1,0 +1,35 @@
+@media only screen and (max-width: 1600px) {
+    .bdcbody{
+        padding: 30px;
+        width: 350px;
+        height: 400px;
+        background-color: #caf0f8;
+        border-radius: 5px;
+    }
+
+    #klp{
+        margin-left: 44px;
+        margin-top: 50px;
+    }
+
+    #zlp{
+        text-align: center;
+    }
+
+    #alp{
+        margin-left: 70px;
+        margin-top: 30px;
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 20px;
+        font-size: 16px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+
+
+
+
+}

@@ -1,0 +1,80 @@
+#gep{
+    padding: 5%;
+    background-color: gray;
+    color: #777;
+    
+}
+
+#pr{
+    padding: 5%;
+    margin-top: 2%;
+    
+    color: #777;
+}
+
+#msk{
+    margin-top: 2%;
+    background-color: #5cb85c;
+    color: #fff;
+}
+
+#qt{
+    padding: 5%;
+}
+
+
+#hel{
+    margin-top: 10%;
+    margin-left: 15%;
+}
+#het{
+    border-left: 5px solid white;
+}
+
+#tex{
+    margin-left: 20%;
+    margin-top: 5%;
+}
+
+#lex{
+    margin-left: 20%;
+    margin-top: 5%;
+}
+
+#dex{
+    margin-left: 20%;
+    margin-top: 17%;
+}
+
+
+#ct{
+    color: #777;
+}
+
+
+
+#ifx{
+    margin-top: 5%;
+}
+
+#cl{
+margin-top: 8%;
+}
+
+.mx{
+    margin-top: 10%;
+}
+
+#fc{
+    width: 16em;
+    padding: 10%;
+}
+
+#fr{
+   
+    margin-right: 20%;
+}
+
+#txy{
+    margin-top: 10%;
+}

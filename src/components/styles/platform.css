@@ -1,0 +1,34 @@
+
+#ftx{
+    padding: 5%;
+    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+}
+
+#ltx{
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+#npq{
+    left: 7%;
+}
+
+
+
+
+img#fd{
+    height: 200px;
+    width: 1600px;
+     /* use props below so that image quality will not be distorted */
+    object-fit:cover;
+    object-position:50% 50%;
+}
+
+ /* end of first tier */
+
+img#sd{
+    height: 400px;
+    width: 600px;
+     /* use props below so that image quality will not be distorted */
+    object-fit:cover;
+    object-position:50% 50%;
+}
