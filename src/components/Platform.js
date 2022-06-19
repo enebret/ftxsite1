@@ -86,7 +86,7 @@ function Platform () {
     
     <Container id = 'ltx'>
     <Row id = ''>
-      <Col md={6} ><Row><img id="npq" src={qOption} alt="q_option" /></Row></Col>
+      <Col md={6} ><Row><img id="npq" src={qOption} alt="q_option" style={{ height: '100%', width: '100%',}}/></Row></Col>
 
               <Col md={{ span: 6 }}>  <Row id = 'fta'>
               <h2>Discover Smart Investing 
@@ -124,14 +124,14 @@ function Platform () {
               </Row>
 
     </Col>
-    <Col md={6}><Row><img id="npq" src={ec} alt="q_option" /></Row></Col>
+    <Col md={6}><Row><img id="npq" src={ec} alt="q_option" style={{ height: '100%', width: '100%',}}/></Row></Col>
   </Row>
       </Container>
 
       <Container>
 
       <Row id = ''>
-      <Col md={6}><Row><img id="npq" src={pca} alt="q_option" /></Row></Col>
+      <Col md={6}><Row><img id="npq" src={pca} alt="q_option" style={{ height: '100%', width: '100%',}}/></Row></Col>
 
               <Col md={{ span: 6}}>  <Row id = ''>
               <h2>Price Alerts and
@@ -162,7 +162,7 @@ function Platform () {
               </Row>
 
     </Col>
-    <Col md={6}><Row><img  src={wrm} alt="q_option" /></Row></Col>
+    <Col md={6}><Row><img  src={wrm} alt="q_option" style={{ height: '100%', width: '100%',}}/></Row></Col>
   </Row>
 
       </Container>
@@ -170,7 +170,7 @@ function Platform () {
 
  
   <Row id = ''>
-      <Col md={6}><Row><img id="" src={fx} alt="q_option" /></Row></Col>
+      <Col md={6}><Row><img id="" src={fx} alt="q_option" style={{ height: '100%', width: '100%',}}/></Row></Col>
 
               <Col md={{ span: 6}}>  <Row id = ''>
               <h2>Trading Signals

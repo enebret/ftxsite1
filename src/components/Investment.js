@@ -79,7 +79,7 @@ function Investment () {
   </Navbar.Collapse>
   </Container>
 </Navbar>
-            <Container fluid id = 'FXT' style={{ backgroundImage: `url(${vw})`,  backgroundSize: '100% 100%', }}>
+            <Container fluid id = 'frd' style={{ backgroundImage: `url(${vw})`,  backgroundSize: '100% 100%', }}>
               <Row  >
             <h2 style={{ color: "white" }}>CFD Trading - Cryptocurrency</h2>
               </Row>
@@ -97,7 +97,7 @@ function Investment () {
             <p>Our expert trading team studies the clients’ portfolio, financial history and stability of each investor and before recommending any package to you they look through all the aspects of your account. If you follow the expert advice you for sure get stable profit.</p>
               </Row>
         </Col>
-    <Col style={{ marginTop: "4%" }}><Row><img src={droid} alt="q_option" style={{ height: '100%', width: '100%',}}/></Row></Col>
+    <Col style={{ marginTop: "4%" }}><Row ><img src={droid} alt="q_option" style={{ height: '100%', width: '100%',}}/></Row></Col>
   </Row>
       </Container>
       
@@ -127,7 +127,7 @@ function Investment () {
     <Card.Text  style={{ textAlign: 'center', }}>
     Personal Account Manager
     </Card.Text>
-    <Button variant="primary" style={{ marginLeft: '25%', }}>Invest Now</Button>  
+    <Button variant="primary" style={{ marginLeft: '30%', }}>Invest Now</Button>  
   </Card.Body>
 </Card> </Row>
         </Col>
@@ -157,7 +157,7 @@ function Investment () {
     <Card.Text  style={{ textAlign: 'center', }}>
     Personal Account Manager
     </Card.Text>
-    <Button variant="primary" style={{ marginLeft: '25%', }}>Invest Now</Button>  
+    <Button variant="primary" style={{ marginLeft: '30%', }}>Invest Now</Button>  
   </Card.Body>
 </Card>  
               </Row>
@@ -189,7 +189,7 @@ function Investment () {
           <Card.Text  style={{ textAlign: 'center', }}>
           Personal Account Manager
           </Card.Text>
-          <Button variant="primary" style={{ marginLeft: '25%', }}>Invest Now</Button>  
+          <Button variant="primary" style={{ marginLeft: '30%', }}>Invest Now</Button>  
         </Card.Body>
       </Card>  
                     </Row>
@@ -221,7 +221,7 @@ function Investment () {
     <Card.Text  style={{ textAlign: 'center', }}>
     Personal Account Manager
     </Card.Text>
-    <Button variant="primary" style={{ marginLeft: '25%', }}>Invest Now</Button>  
+    <Button variant="primary" style={{ marginLeft: '30%', }}>Invest Now</Button>  
   </Card.Body>
 </Card>  
               </Row>
