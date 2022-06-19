@@ -97,7 +97,7 @@ function Investment () {
             <p>Our expert trading team studies the clients’ portfolio, financial history and stability of each investor and before recommending any package to you they look through all the aspects of your account. If you follow the expert advice you for sure get stable profit.</p>
               </Row>
         </Col>
-    <Col style={{ marginTop: "4%" }}><Row md ={4} ><img src={droid} alt="q_option" style={{ height: 'auto', width: 'auto',}}/></Row></Col>
+    <Col style={{ marginTop: "4%" }}><Row><img src={droid} alt="q_option" style={{ height: '100%', width: '100%',}}/></Row></Col>
   </Row>
       </Container>
       
