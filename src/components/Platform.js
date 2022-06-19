@@ -33,7 +33,7 @@ function Platform () {
     <div>
        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Container>
-  <Navbar.Brand href="#home">FTX</Navbar.Brand>
+  <Navbar.Brand href="#home">FXT</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
@@ -78,9 +78,9 @@ function Platform () {
   </Navbar.Collapse>
   </Container>
 </Navbar>
-<Container fluid id = 'ftx'>
+<Container fluid id = 'fdq'>
               <Row  >
-            <h2 style={{ color: "white" }}>TradeMax LTD Platform.</h2>
+            <h2 style={{ color: "white" }}>FXT LTD Platform.</h2>
               </Row>
             </Container>
     
@@ -90,12 +90,12 @@ function Platform () {
 
               <Col md={{ span: 6 }}>  <Row id = 'fta'>
               <h2>Discover Smart Investing 
-              With the FTX
+              With the FXT
               Limited.
                 </h2> 
               </Row>
               <Row id = 'ftd'>
-            <p>The FTX Limited trading platform combines simplicity with sophistication to connect you to the world’s most volatile financial markets. Our dashboard display delivers one-click order execution and is equipped with the latest trading tools. Your trading is backed up by live charts and real-time data feeds, as well as trading signals and the latest market news and analysis.</p>
+            <p>The FXT Limited trading platform combines simplicity with sophistication to connect you to the world’s most volatile financial markets. Our dashboard display delivers one-click order execution and is equipped with the latest trading tools. Your trading is backed up by live charts and real-time data feeds, as well as trading signals and the latest market news and analysis.</p>
               </Row>
 
     </Col>
@@ -107,7 +107,7 @@ function Platform () {
       <Row id = 'ftg'>
           <h2>Optimise your Trading
           Experience.</h2>
-          <p>The FTX Max Limited platform is flexible enough to meet every trading style and requirement.</p>
+          <p>The FXT Max Limited platform is flexible enough to meet every trading style and requirement.</p>
            </Row>
  
       </Container>
@@ -141,7 +141,7 @@ function Platform () {
               <Row id = ''>
                 </Row>
               <Row id = ''>
-            <p>FTX Limited price alerts give you the freedom to step back from the markets until they meet your requirements. Set the rate at which you want to enter the markets and receive immediate notification when it’s time to trade.</p>
+            <p>FXT Limited price alerts give you the freedom to step back from the markets until they meet your requirements. Set the rate at which you want to enter the markets and receive immediate notification when it’s time to trade.</p>
               </Row>
 
     </Col>
