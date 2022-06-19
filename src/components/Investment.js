@@ -85,10 +85,9 @@ function Investment () {
               </Row>
             </Container>
 
-            <Container id = 'fda'>
-            <Row id = 'mpm'>
-                <Col md={{ span: 6}}>  
-              
+            <Container >
+            <Row id = ''>
+              <Col md={{ span: 6}}>  
               <Row id = 'ftd'>
               <h2 style={{ fontWeight: '1000', color: 'black'}}>start with an <span   style={{ color: 'green', }}>Investment Plan.</span>
                 </h2> 
@@ -98,14 +97,14 @@ function Investment () {
             <p>Our expert trading team studies the clients’ portfolio, financial history and stability of each investor and before recommending any package to you they look through all the aspects of your account. If you follow the expert advice you for sure get stable profit.</p>
               </Row>
         </Col>
-    <Col md={6}><Row><img id="npq" src={droid} alt="q_option" /></Row></Col>
+    <Col md={6} style={{ marginTop: "4%" }}><Row><img src={droid} alt="q_option" style={{ height: 'auto', width: 'auto',}}/></Row></Col>
   </Row>
       </Container>
       
-      <Container   fluid style={{ padding: "5%", backgroundColor:'#eee', marginBottom: '2%' }}>
-      <Row style={{ margin: "auto" }}>
-      <Col md={{ span: 3, }} > <Row>
-      <Card style={{ width: '18rem' }}>
+      <Container   fluid style={{ backgroundColor:'#eee', marginBottom: '2%', paddingTop: '5%', paddingBottom: '5%'}}>
+      <Row style={{ margin: 'auto' }}>
+      <Col md={3} > <Row  >
+      <Card >
       
         <Card.Body>
         <Card.Title style={{ textAlign: 'center', }}>Classic</Card.Title>
@@ -133,9 +132,9 @@ function Investment () {
 </Card> </Row>
         </Col>
 
-        <Col md={{ span: 3, }}  > <Row id = ''> 
+        <Col  md={3} > <Row > 
               
-        <Card style={{ width: '18rem' }}>
+        <Card >
       
         <Card.Body>
         <Card.Title style={{ textAlign: 'center', }}>Platinum</Card.Title>
@@ -165,9 +164,9 @@ function Investment () {
 
     </Col>
 
-    <Col md={{ span: 3, }}> <Row id = ''> 
+    <Col md={3} > <Row > 
               
-              <Card style={{ width: '18rem' }}>
+              <Card >
             
               <Card.Body>
               <Card.Title style={{ textAlign: 'center', }}>Gold</Card.Title>
@@ -197,9 +196,9 @@ function Investment () {
       
           </Col>
 
-          <Col md={{ span: 3, }}> <Row id = ''> 
+          <Col md={3} > <Row id = ''> 
               
-        <Card style={{ width: '18rem' }}>
+        <Card >
       
         <Card.Body>
         <Card.Title style={{ textAlign: 'center', }}>Diamond</Card.Title>
