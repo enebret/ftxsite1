@@ -34,7 +34,7 @@ function Investment () {
     <div>
        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Container>
-  <Navbar.Brand href="#home">FTX</Navbar.Brand>
+  <Navbar.Brand href="#home">FXT</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
@@ -79,7 +79,7 @@ function Investment () {
   </Navbar.Collapse>
   </Container>
 </Navbar>
-            <Container fluid id = 'ftx' style={{ backgroundImage: `url(${vw})`,  backgroundSize: '100% 100%', }}>
+            <Container fluid id = 'FXT' style={{ backgroundImage: `url(${vw})`,  backgroundSize: '100% 100%', }}>
               <Row  >
             <h2 style={{ color: "white" }}>CFD Trading - Cryptocurrency</h2>
               </Row>
@@ -92,12 +92,12 @@ function Investment () {
               <h2 style={{ fontWeight: '1000', color: 'black'}}>start with an <span   style={{ color: 'green', }}>Investment Plan.</span>
                 </h2> 
             <p  id = 'lkq'>Our support team will get assistance from AI-powered suggestions, making it quicker than ever to handle support requests. Our support team will get assistance from AI-powered suggestions.</p>
-            <p>FTX investment strategy is designed to deliver a well-balanced and globally diversified portfolio that will maximize sustained long-term returns without incurring undue risk. We offer a simple attitude to stock trading with an extraordinary Managed Account Platform that allows users to watch their accounts grow by logging in 24 hours a day. Clients have the ability to view their account anytime but are not required to make any trade accomplishment decisions on their own behalf.</p>
+            <p>FXT investment strategy is designed to deliver a well-balanced and globally diversified portfolio that will maximize sustained long-term returns without incurring undue risk. We offer a simple attitude to stock trading with an extraordinary Managed Account Platform that allows users to watch their accounts grow by logging in 24 hours a day. Clients have the ability to view their account anytime but are not required to make any trade accomplishment decisions on their own behalf.</p>
             <p>To reach the target of this strategy, our trading expert have designed multiple investment packages for you to choose from based on your financial needs. You can choose yourself which plan to invest into. But if you have some doubts and hesitate which plan to take, you can consult with our expert trading team.</p>
             <p>Our expert trading team studies the clients’ portfolio, financial history and stability of each investor and before recommending any package to you they look through all the aspects of your account. If you follow the expert advice you for sure get stable profit.</p>
               </Row>
         </Col>
-    <Col md={6} style={{ marginTop: "4%" }}><Row><img src={droid} alt="q_option" style={{ height: 'auto', width: 'auto',}}/></Row></Col>
+    <Col style={{ marginTop: "4%" }}><Row md ={4} ><img src={droid} alt="q_option" style={{ height: 'auto', width: 'auto',}}/></Row></Col>
   </Row>
       </Container>
       

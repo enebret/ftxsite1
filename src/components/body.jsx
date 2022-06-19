@@ -32,7 +32,7 @@ function Body () {
      <div class=''>
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Container>
-  <Navbar.Brand href="#home">FTX</Navbar.Brand>
+  <Navbar.Brand href="#home">FXT</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
@@ -123,7 +123,7 @@ function Body () {
           </Row>
           <Row id = 'lex'>
             <h4 style={{ color: '#777',  fontWeight: '700'}}><img src= '/pix/thh.png' />CANABIS</h4>
-            <p  style={{ marginTop: '5%'}}>FTX LTD has turned cannabis stock trading into a very comfortable, speedy, easy, safe, and relatively risk free process</p>
+            <p  style={{ marginTop: '5%'}}>FXT LTD has turned cannabis stock trading into a very comfortable, speedy, easy, safe, and relatively risk free process</p>
           </Row>
          </Col>
         </Row>
@@ -198,7 +198,7 @@ function Body () {
           
         </Row>
         <Row >
-        <h6  style={{ fontWeight: '700',textAlign: 'center', width: '600px', margin: 'auto'}}>View the testimonials of our happy clients who have worked with us and enjoyed the trading system with FTX LTD</h6>
+        <h6  style={{ fontWeight: '700',textAlign: 'center', width: '600px', margin: 'auto'}}>View the testimonials of our happy clients who have worked with us and enjoyed the trading system with FXT LTD</h6>
         </Row>
 
        
@@ -212,7 +212,7 @@ function Body () {
       <Card.Img variant="top" src="/pix/ke.png" style={{ height: 'auto', width: 'auto', marginLeft: '25%'}}/>
       <Card.Title style={{ textAlign: 'center', }}>ADAMS WILSON</Card.Title>
       <Card.Text  style={{ textAlign: 'center', }}>
-      I am in a group who has made a number of investments in FTX LTD. I find them to be quite knowledgeable and professional about their business. They run it profitably, and they pay on time.
+      I am in a group who has made a number of investments in FXT LTD. I find them to be quite knowledgeable and professional about their business. They run it profitably, and they pay on time.
           </Card.Text>
   
         </Card.Body>
@@ -227,7 +227,7 @@ function Body () {
       <Card.Img variant="top" src="/pix/ke.png" style={{ height: 'auto', width: 'auto', marginLeft: '25%'}}/>
       <Card.Title style={{ textAlign: 'center', }}>PAUL BLISS</Card.Title>
       <Card.Text  style={{ textAlign: 'center', }}>
-      I am in a group who has made a number of investments in FTX LTD. I find them to be quite knowledgeable and professional about their business. They run it profitably, and they pay on time.
+      I am in a group who has made a number of investments in FXT LTD. I find them to be quite knowledgeable and professional about their business. They run it profitably, and they pay on time.
           </Card.Text>
   
         </Card.Body>
@@ -240,7 +240,7 @@ function Body () {
       <Card.Img variant="top" src="/pix/kate.png" style={{ height: 'auto', width: 'auto', marginLeft: '25%'}}/>
       <Card.Title style={{ textAlign: 'center', }}>MATHIAS KATE</Card.Title>
       <Card.Text  style={{ textAlign: 'center', }}>
-      I am in a group who has made a number of investments in FTX LTD. I find them to be quite knowledgeable and professional about their business. They run it profitably, and they pay on time.
+      I am in a group who has made a number of investments in FXT LTD. I find them to be quite knowledgeable and professional about their business. They run it profitably, and they pay on time.
           </Card.Text>
   
         </Card.Body>
