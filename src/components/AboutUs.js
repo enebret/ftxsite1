@@ -105,7 +105,7 @@ function Platform () {
        <img src= '/pix/lt.png' style={{ marginLeft: "5%" }}/>
        </Col>
 
-<Col md={6} ><Row><img id="npq" src={mapy} alt="q_option" /></Row></Col>
+<Col md={6} ><Row><img id="npq" src={mapy} alt="q_option" style={{ height: '100%', width: '100%',}}/></Row></Col>
 </Row>
 </Container>
 
@@ -121,7 +121,7 @@ function Platform () {
               </Row>
 
     </Col>
-    <Col md={6} style={{ marginTop: "5%" }}><Row><img id="npq" src={secondDiv} alt="q_option" /></Row></Col>
+    <Col md={6} style={{ marginTop: "5%" }}><Row><img id="npq" src={secondDiv} alt="q_option" style={{ height: '100%', width: '100%',}}/></Row></Col>
   </Row>
   
 </Container>
@@ -142,7 +142,7 @@ function Platform () {
 
     </Col>
 
-    <Col md={6} style={{ marginTop: "7%" }}><Row><img id="npq" src= '/pix/dv.png' alt="q_option" /></Row></Col>
+    <Col md={6} style={{ marginTop: "7%" }}><Row><img id="npq" src= '/pix/dv.png' alt="q_option" style={{ height: '100%', width: '100%',}}/></Row></Col>
 
   </Row>
 </Container>
@@ -150,7 +150,7 @@ function Platform () {
 <Container fluid  style={{ paddingLeft: "10%", paddingRight: '10%', paddingBottom: '10%', lineHeight: "2"   }}>
   
   <Row >
-      <Col md={5}><Row><img id="npq" src= '/pix/mem.jpg' alt="q_option" /></Row></Col>
+      <Col md={5}><Row><img id="npq" src= '/pix/mem.jpg' alt="q_option" style={{ height: '100%', width: '100%',}}/></Row></Col>
 
               <Col md={{ span: 7}}  style={{ marginTop: "5%", textAlign: "justify"  }}>  <Row id = 'fta'>
               <h2>Why You Need To Be A Member
@@ -172,7 +172,7 @@ function Platform () {
 <Container fluid  style={{ paddingLeft: "10%", paddingRight: '10%', paddingBottom: '10%', lineHeight: "2"  }}>
   
   <Row >
-      <Col md={6} style={{ marginTop: "5%" }}><Row><img id="npq" src= '/pix/ph.png' alt="q_option" /></Row></Col>
+      <Col md={6} style={{ marginTop: "5%" }}><Row><img id="npq" src= '/pix/ph.png' alt="q_option" style={{ height: '100%', width: '100%',}}/></Row></Col>
 
               <Col md={{ span: 6}}  style={{ textAlign: "justify" }}>  <Row id = 'fta'>
               <h2>No Experience Trading, Can I Be A Member
