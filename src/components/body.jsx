@@ -83,7 +83,7 @@ function Body () {
        <Row  id = 'hel'>
             <h2 id = 'het'  style={{ color: 'white',  fontWeight: '700'}}>Automate Cryptocurrency trading with our <span  style={{ color: 'black'}}>Simple</span> & flexible platform.</h2>
             <p style={{ color: 'white',  fontWeight: '200'}}>Our team of experienced traders does the research and trading for all ours members with our winning business models to skyroket earnings.</p>
-            <Button variant="primary" type="submit"  style={{ backgroundColor: '#5cb85c',  fontWeight: '600', color: 'white', border: 'none', width: '200px', marginTop: '4%'}}>
+            <Button variant="primary" type="submit"  style={{ backgroundColor: '#5cb85c',  fontWeight: '600', color: 'white', border: 'none', width: '200px', marginTop: '4%'}} onClick={() => navigate('/signup')}>
                   GET STARTED TODAY
               </Button>
         </Row>

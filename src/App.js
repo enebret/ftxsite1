@@ -10,7 +10,7 @@ import ContactUs from './components/ContactUs.js';
 import Faq from './components/Faq.js';
 import Partnership from './components/Partnership';
 import Platform from './components/Platform.js';
-
+//node server/server.js (package.json)
 import SignT from './components/SignT.js';
 import { Routes, Route, Link } from "react-router-dom";
 //errors are due to js file extension
