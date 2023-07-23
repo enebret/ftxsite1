@@ -30,7 +30,7 @@ function Signup () {
     const [Password, setPassword] = useState('');
     const [Firstname, setFirstname] = useState('');
     const [Lastname, setLastname] = useState('');
-    const [Phone, setPhone] = useState('');
+    const [Username, setUsername] = useState('');
 
     const navigate = useNavigate();
     const handleSubmit = (e) => {
@@ -39,18 +39,18 @@ function Signup () {
             firstname: Firstname,
             lastname: Lastname,
             email: Email,
-            phone: Phone,
+            username: Username,
             password: Password
           };
 
-          axios.post('http://localhost:5045/user/signup', user)
+          axios.post('http://localhost:8082/user/signup', user)
           .then(response => {
-            if(response.data.msg=='new user added successfully'){
+            if(response.data!=='already registered'){
               //redirect to homepage or dashboard page
               console.log(response.data);
               navigate('/'); //navigate to dashboard with user details passed as prop parameters
-            }else if(response.data=='this email is an existing user email or you are already a registered user.Kindly enter your email and password to login into your dashboard'){
-              //display error msg to user here by updating the dom inform of a caution message drop down stating the error message
+            }else if(response.data!=='welcome'){
+              //display error msg to user here by updating the dom
               console.log(response.data);
             }
           })
@@ -110,25 +110,9 @@ function Signup () {
   </Navbar.Collapse>
   </Container>
 </Navbar>
-        <div class='signupmaindiv'>
-            <div class = 'subdiv'>
-            <form onSubmit={handleSubmit}>
-              <label for="firstname">Firstname</label>
-              <input type="text" name = 'firstname' value = {Firstname} onChange={e => setFirstname(e.target.value)}></input>
-              <label for="lastname">Lastname</label>
-              <input type="text" name = 'lastname' value = {Lastname} onChange={e => setLastname(e.target.value)}></input>
-              <label for="email">Email</label>
-              <input type="text" name = 'email' value = {Email} onChange={e => setUserEmail(e.target.value)}></input>
-              <label for="username">Phone</label>
-              <input type="text" name = 'username' value = {Phone} onChange={e => setPhone(e.target.value)}></input>
-              <label for="password">password</label>
-              <input type="text" name = 'Password' value = {Password} onChange={e => setPassword(e.target.value)}></input>
-              <input type="submit" value="Submit"></input>
-              </form>
-            </div>
-        </div>
+       
         </div>
     )
 }
 
-export default Signup;
+export default Dashboard;
