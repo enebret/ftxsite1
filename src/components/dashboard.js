@@ -1,5 +1,5 @@
 /*jshint esversion: 8 */
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './signupStyles.css';
 import axios from 'axios';
 import './styles/aboutus.css';
@@ -25,41 +25,19 @@ import vw from './pix/vw.jpg';
 import droid from './pix/droid.png';
 import inv from './pix/inv.png';
 
-function Signup () {
-    const [Email, setUserEmail] = useState('');
-    const [Password, setPassword] = useState('');
-    const [Firstname, setFirstname] = useState('');
-    const [Lastname, setLastname] = useState('');
-    const [Username, setUsername] = useState('');
-
+function Dashboard () {
+    const [authenticated, setAuthenticated] = useState(null);
     const navigate = useNavigate();
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const user = {
-            firstname: Firstname,
-            lastname: Lastname,
-            email: Email,
-            username: Username,
-            password: Password
-          };
-
-          axios.post('http://localhost:8082/user/signup', user)
-          .then(response => {
-            if(response.data!=='already registered'){
-              //redirect to homepage or dashboard page
-              console.log(response.data);
-              navigate('/'); //navigate to dashboard with user details passed as prop parameters
-            }else if(response.data!=='welcome'){
-              //display error msg to user here by updating the dom
-              console.log(response.data);
-            }
-          })
-          
-          .catch(err => {
-            console.error(err);
-        });
-
-        };
+    useEffect(()=>{
+      const loggedInUser = localStorage.getItem('authenticated');
+        if(loggedInUser){
+          setAuthenticated(loggedInUser)
+        }
+    }, [])
+    if(!authenticated){
+      navigate('/login')
+    }
+ 
 //dashboard component should be here and the user details be passed as props to the dashboard component once there is a response from the backend
     return (
       <div>

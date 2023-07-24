@@ -20,7 +20,35 @@ import cal from './pix/cal.jpeg';
 
 function ContactT () {
   const navigate = useNavigate();
+  const [Email, setUserEmail] = useState('');
+  const [Password, setPassword] = useState('');
+  const [authentciated, setAuthenticated] = useState(localStorage.getItem(localStorage.getItem('authenticated')||false));
+  const handleSubmit = (e) => {
+      e.preventDefault();
+      const user = {
+          email: Email,
+          password: Password
+        };
 
+        axios.post('http://localhost:5045/user/signin', user)
+        .then(response => {
+          if(response.data.msg=='new user added successfully'){
+            //redirect to homepage or dashboard page
+            console.log(response.data);
+            localStorage.setItem('authenticated', true)
+            navigate('/dashboard'); //navigate to dashboard with user details passed as prop parameters
+          }else if(response.data=='this email is an existing user email or you are already a registered user.Kindly enter your email and password to login into your dashboard'){
+            //display error msg to user here by updating the dom inform of a caution message drop down stating the error message
+            console.log(response.data);
+            navigate('/login');
+          }
+        })
+        
+        .catch(err => {
+          console.error(err);
+      });
+
+      };
     return (
     
        <div>
@@ -40,10 +68,10 @@ function ContactT () {
     </Nav>
     <Nav id = 'fr'>
     <NavDropdown title="My Account" id="collasible-nav-dropdown" >
-      <Form id = 'fc'>
+      <Form id = 'fc' onSubmit={handleSubmit}>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
+    <Form.Control type="email" placeholder="Enter email" value = {Email} onChange={e => setUserEmail(e.target.value)}/>
     <Form.Text className="text-muted">
       We'll never share your email with anyone else.
     </Form.Text>
@@ -51,7 +79,7 @@ function ContactT () {
 
   <Form.Group className="mb-3" controlId="formBasicPassword">
     <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
+    <Form.Control type="password" placeholder="Password" value = {Email} onChange={e => setUserEmail(e.target.value)}/>
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicCheckbox">
     <Form.Check type="checkbox" label="Check me out" />
