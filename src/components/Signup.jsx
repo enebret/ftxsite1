@@ -48,7 +48,7 @@ function Signup () {
             if(response.data.msg=='new user added successfully'){
               //redirect to homepage or dashboard page
               console.log(response.data);
-              navigate('/'); //navigate to dashboard with user details passed as prop parameters
+              navigate('/dashboard'); //navigate to dashboard with user details passed as prop parameters
             }else if(response.data=='this email is an existing user email or you are already a registered user.Kindly enter your email and password to login into your dashboard'){
               //display error msg to user here by updating the dom inform of a caution message drop down stating the error message
               console.log(response.data);

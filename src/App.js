@@ -8,6 +8,7 @@ import AboutUs from './components/AboutUs.js';
 import Investment from './components/Investment.js';
 import ContactUs from './components/ContactUs.js';
 import Faq from './components/Faq.js';
+import Dashboard from './components/Dashboard.js';
 import Partnership from './components/Partnership';
 import Platform from './components/Platform.js';
 //node server/server.js (package.json)
@@ -29,8 +30,8 @@ function App() {
           <Route path="investment" element={<Investment />}></Route>
           <Route path="partnership" element={<Partnership />}></Route>
           <Route path="platform" element={<Platform />}></Route>
+          <Route path="dashboard" element={<Dashboard />}></Route>
           <Route path="contactus" element={<ContactUs />}></Route>
-          
           <Route path="faq" element={<Faq />}></Route>
           <Route path="SignT" element={<SignT />}></Route>
           
