@@ -24,7 +24,6 @@ function ContactT () {
   const navigate = useNavigate();
   const [Email, setUserEmail] = useState('');
   const [Password, setPassword] = useState('');
-  const [authenticated, setAuthenticated] = useState(localStorage.getItem(localStorage.getItem('authenticated')||false));
   const handleSubmit = (e) => {
       e.preventDefault();
       const user = {
@@ -34,12 +33,12 @@ function ContactT () {
 
         axios.post('http://localhost:5045/user/signin', user)
         .then(response => {
-          if(response.data=='user password has been verified, take them to the dashboard'){
+          if(response.data){
             //redirect to homepage or dashboard page
             console.log(response.data);
-            localStorage.setItem('authenticated', true)
+            localStorage.setItem('userDetails', response.data)
             navigate('/dashboard'); //navigate to dashboard with user details passed as prop parameters
-          }else if(response.data=='incorrect user password, try again'){
+          }else if(response.data&&response.data=='incorrect user password, try again'){
             //display error msg to user here by updating the dom inform of a caution message drop down stating the error message
             console.log(response.data);
             navigate('/login');

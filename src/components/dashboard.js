@@ -29,15 +29,19 @@ import inv from './pix/inv.png';
 function Dashboard () {
     const [authenticated, setAuthenticated] = useState(null);
     const navigate = useNavigate();
+    var userDetailsObject
     useEffect(()=>{
-      const loggedInUser = localStorage.getItem('authenticated');
+      const loggedInUser = localStorage.getItem('userDetails');
         if(loggedInUser){
-          setAuthenticated(loggedInUser)
+          setAuthenticated(loggedInUser);
+          userDetailsObject = JSON.parse(loggedInUser)
         }
     }, [])
     if(!authenticated){
       navigate('/login')
-    }
+    };
+    var {firstname, lastname} = userDetailsObject;
+    const fullname = firstname + '' +lastname
  
 //dashboard component should be here and the user details be passed as props to the dashboard component once there is a response from the backend
     return (
@@ -47,12 +51,16 @@ function Dashboard () {
   <Navbar.Brand href="#home">FXT</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
-  <Nav.Link id = "logout" onClick={ () => {setAuthenticated(false);navigate('/')}}>Logout</Nav.Link>
+  <Nav.Link id = "logout" onClick={ () => {localStorage.clear();navigate('/')}}>Logout</Nav.Link>
   
   </Navbar.Collapse>
   </Container>
 </Navbar>
-       
+       <div>
+        <Container>
+          <p>Welcome to your page {fullname}</p>
+        </Container>
+       </div>
         </div>
     )
 }
