@@ -1,4 +1,6 @@
 /*jshint esversion: 8 */
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import './styles/contactus.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -22,7 +24,7 @@ function ContactT () {
   const navigate = useNavigate();
   const [Email, setUserEmail] = useState('');
   const [Password, setPassword] = useState('');
-  const [authentciated, setAuthenticated] = useState(localStorage.getItem(localStorage.getItem('authenticated')||false));
+  const [authenticated, setAuthenticated] = useState(localStorage.getItem(localStorage.getItem('authenticated')||false));
   const handleSubmit = (e) => {
       e.preventDefault();
       const user = {
@@ -32,12 +34,12 @@ function ContactT () {
 
         axios.post('http://localhost:5045/user/signin', user)
         .then(response => {
-          if(response.data.msg=='new user added successfully'){
+          if(response.data=='user password has been verified, take them to the dashboard'){
             //redirect to homepage or dashboard page
             console.log(response.data);
             localStorage.setItem('authenticated', true)
             navigate('/dashboard'); //navigate to dashboard with user details passed as prop parameters
-          }else if(response.data=='this email is an existing user email or you are already a registered user.Kindly enter your email and password to login into your dashboard'){
+          }else if(response.data=='incorrect user password, try again'){
             //display error msg to user here by updating the dom inform of a caution message drop down stating the error message
             console.log(response.data);
             navigate('/login');
@@ -79,7 +81,7 @@ function ContactT () {
 
   <Form.Group className="mb-3" controlId="formBasicPassword">
     <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" value = {Email} onChange={e => setUserEmail(e.target.value)}/>
+    <Form.Control type="password" placeholder="Password" value = {Password} onChange={e => setPassword(e.target.value)}/>
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicCheckbox">
     <Form.Check type="checkbox" label="Check me out" />

@@ -1,6 +1,7 @@
 /*jshint esversion: 8 */
 import React, {useEffect, useState} from 'react';
 import './signupStyles.css';
+import './styles/dashboard.css';
 import axios from 'axios';
 import './styles/aboutus.css';
 import firstDiv from './util/aboutusimages/first_div.jpg';
@@ -46,45 +47,8 @@ function Dashboard () {
   <Navbar.Brand href="#home">FXT</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
-    <Nav className="me-auto">
-      <Nav.Link onClick={ () => navigate('/')}>Home</Nav.Link>
-      <Nav.Link onClick={() => navigate('/aboutus')}>Company</Nav.Link>
-      <Nav.Link onClick={() => navigate('/investment')}>Investment</Nav.Link>
-      <Nav.Link onClick={() => navigate('/faq')}>Faq</Nav.Link>
-      <Nav.Link onClick={() => navigate('/platform')}>Platform</Nav.Link>
-      <Nav.Link onClick={() => navigate('/partnership')}>Partnership</Nav.Link>
-      <Nav.Link onClick={() => navigate('/contactus')}>Contact us</Nav.Link>
- 
-    </Nav>
-    <Nav id = 'fr'>
-    <NavDropdown title="My Account" id="collasible-nav-dropdown" >
-      <Form id = 'fc'>
-  <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
-    <Form.Text className="text-muted">
-      We'll never share your email with anyone else.
-    </Form.Text>
-  </Form.Group>
-
-  <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
-  </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
-  </Form.Group>
-  <Button variant="primary" type="submit">
-    Signin
-  </Button>
-  <Form.Group id = 'txy' >
-  <Form.Text >
-  Don't have an account yet? <a href='' onClick={() => navigate('/signup')}>CREATE AN ACCOUNT NOW</a>
-    </Form.Text>
-  </Form.Group>
-</Form>
-      </NavDropdown>
-    </Nav>
+  <Nav.Link id = "logout" onClick={ () => {setAuthenticated(false);navigate('/')}}>Logout</Nav.Link>
+  
   </Navbar.Collapse>
   </Container>
 </Navbar>
