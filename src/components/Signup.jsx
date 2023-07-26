@@ -45,11 +45,14 @@ function Signup () {
 
           axios.post('http://localhost:5045/user/signup', user)
           .then(response => {
-            if(response.data.msg=='new user added successfully'){
-              //redirect to homepage or dashboard page
-              console.log(response.data);
+            if(response.data){
+              var data = response.data
+              var {firstname, lastname} = data;
+              let fullname = firstname + " "+lastname
+              console.log(fullname)
+              localStorage.setItem('user', fullname);
               navigate('/dashboard'); //navigate to dashboard with user details passed as prop parameters
-            }else if(response.data=='this email is an existing user email or you are already a registered user.Kindly enter your email and password to login into your dashboard'){
+            }else if(response.data&&response.data=='this email is an existing user email or you are already a registered user.Kindly enter your email and password to login into your dashboard'){
               //display error msg to user here by updating the dom inform of a caution message drop down stating the error message
               console.log(response.data);
               navigate('/login');

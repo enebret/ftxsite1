@@ -29,19 +29,17 @@ import inv from './pix/inv.png';
 function Dashboard () {
     const [authenticated, setAuthenticated] = useState(null);
     const navigate = useNavigate();
-    var userDetailsObject
+    var loggedInUser = localStorage.getItem('user')
     useEffect(()=>{
-      const loggedInUser = localStorage.getItem('userDetails');
         if(loggedInUser){
           setAuthenticated(loggedInUser);
-          userDetailsObject = JSON.parse(loggedInUser)
+          
         }
     }, [])
     if(!authenticated){
       navigate('/login')
     };
-    var {firstname, lastname} = userDetailsObject;
-    const fullname = firstname + '' +lastname
+    console.log(loggedInUser)
  
 //dashboard component should be here and the user details be passed as props to the dashboard component once there is a response from the backend
     return (
@@ -58,7 +56,7 @@ function Dashboard () {
 </Navbar>
        <div>
         <Container>
-          <p>Welcome to your page {fullname}</p>
+          <p>Welcome to your page {loggedInUser}</p>
         </Container>
        </div>
         </div>

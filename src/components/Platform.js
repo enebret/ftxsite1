@@ -2,6 +2,8 @@
 
 import './styles/platform.css';
 import { useNavigate } from 'react-router-dom';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import logo from './util/logo.JPG';
 import firstDiv from './util/aboutusimages/first_div.jpg';
 import secondDiv from './util/aboutusimages/second_div.jpg';
@@ -28,7 +30,38 @@ import pca from './pix/pca.png';
 
 function Platform () {
   const navigate = useNavigate();
+  const [Email, setUserEmail] = useState('');
+  const [Password, setPassword] = useState('');
+  const handleSubmit = (e) => {
+      e.preventDefault();
+      const user = {
+          email: Email,
+          password: Password
+        };
 
+        axios.post('http://localhost:5045/user/signin', user)
+        .then(response => {
+          if(response.data){
+            var data = response.data
+            var {firstname, lastname} = data;
+            let fullname = firstname + " "+lastname
+            console.log(fullname)
+            localStorage.setItem('user', fullname);
+            let pr = localStorage.getItem('user');
+            console.log(pr)
+            navigate('/dashboard'); //navigate to dashboard with user details passed as prop parameters
+          }else if(response.data&&response.data=='incorrect user password, try again'){
+            //display error msg to user here by updating the dom inform of a caution message drop down stating the error message
+            console.log(response.data);
+            navigate('/login');
+          }
+        })
+        
+        .catch(err => {
+          console.error(err);
+      });
+
+      };
     return (
     <div>
        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -48,10 +81,10 @@ function Platform () {
     </Nav>
     <Nav id = 'fr'>
     <NavDropdown title="My Account" id="collasible-nav-dropdown" >
-      <Form id = 'fc'>
+    <Form id = 'fc' onSubmit={handleSubmit}>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
+    <Form.Control type="email" placeholder="Enter email" value = {Email} onChange={e => setUserEmail(e.target.value)}/>
     <Form.Text className="text-muted">
       We'll never share your email with anyone else.
     </Form.Text>
@@ -59,7 +92,7 @@ function Platform () {
 
   <Form.Group className="mb-3" controlId="formBasicPassword">
     <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
+    <Form.Control type="password" placeholder="Password" value = {Password} onChange={e => setPassword(e.target.value)}/>
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicCheckbox">
     <Form.Check type="checkbox" label="Check me out" />

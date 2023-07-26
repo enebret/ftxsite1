@@ -34,9 +34,13 @@ function ContactT () {
         axios.post('http://localhost:5045/user/signin', user)
         .then(response => {
           if(response.data){
-            //redirect to homepage or dashboard page
-            console.log(response.data);
-            localStorage.setItem('userDetails', response.data)
+            var data = response.data
+            var {firstname, lastname} = data;
+            let fullname = firstname + " "+lastname
+            console.log(fullname)
+            localStorage.setItem('user', fullname);
+            let pr = localStorage.getItem('user');
+            console.log(pr)
             navigate('/dashboard'); //navigate to dashboard with user details passed as prop parameters
           }else if(response.data&&response.data=='incorrect user password, try again'){
             //display error msg to user here by updating the dom inform of a caution message drop down stating the error message
