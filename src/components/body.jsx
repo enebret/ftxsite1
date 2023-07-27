@@ -40,12 +40,10 @@ function Body () {
         .then(response => {
           if(response.data){
             var data = response.data
-            var {firstname, lastname} = data;
-            let fullname = firstname + " "+lastname
-            console.log(fullname)
+            var {firstname, lastname, balance} = data;
+            let fullname = firstname + " "+lastname;
             localStorage.setItem('user', fullname);
-            let pr = localStorage.getItem('user');
-            console.log(pr)
+              localStorage.setItem('bal', balance);
             navigate('/dashboard'); //navigate to dashboard with user details passed as prop parameters
           }else if(response.data&&response.data=='incorrect user password, try again'){
             //display error msg to user here by updating the dom inform of a caution message drop down stating the error message
