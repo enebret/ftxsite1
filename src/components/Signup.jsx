@@ -1,8 +1,8 @@
 /*jshint esversion: 8 */
 import React, {useState} from 'react';
-import './signupStyles.css';
+import './styles/signup.css';
 import axios from 'axios';
-import './styles/aboutus.css';
+import './styles/signup.css'
 import firstDiv from './util/aboutusimages/first_div.jpg';
 import vgDiv from './util/investment/undraw.png';
 import pgDiv from './util/investment/external.png';
@@ -38,6 +38,7 @@ function Signup () {
         const user = {
             firstname: Firstname,
             lastname: Lastname,
+            balance: 0,
             email: Email,
             phone: Phone,
             password: Password
@@ -47,10 +48,11 @@ function Signup () {
           .then(response => {
             if(response.data){
               var data = response.data
-              var {firstname, lastname} = data;
+              var {firstname, lastname, balance} = data;
               let fullname = firstname + " "+lastname
               console.log(fullname)
               localStorage.setItem('user', fullname);
+              localStorage.setItem('bal', balance);
               navigate('/dashboard'); //navigate to dashboard with user details passed as prop parameters
             }else if(response.data&&response.data=='this email is an existing user email or you are already a registered user.Kindly enter your email and password to login into your dashboard'){
               //display error msg to user here by updating the dom inform of a caution message drop down stating the error message
@@ -116,7 +118,7 @@ function Signup () {
 </Navbar>
         <div class='signupmaindiv'>
             <div class = 'subdiv'>
-            <form onSubmit={handleSubmit}>
+           {/*<form onSubmit={handleSubmit}>
               <label for="firstname">Firstname</label>
               <input type="text" name = 'firstname' value = {Firstname} onChange={e => setFirstname(e.target.value)}></input>
               <label for="lastname">Lastname</label>
@@ -128,9 +130,47 @@ function Signup () {
               <label for="password">password</label>
               <input type="text" name = 'Password' value = {Password} onChange={e => setPassword(e.target.value)}></input>
               <input type="submit" value="Submit"></input>
-              </form>
+              </form>*/} 
+               <Form id='form-ct' onSubmit={handleSubmit}>
+               <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Label>First Name</Form.Label>
+    <Form.Control type="email" size="lg" placeholder="Enter firstname" value = {Firstname} onChange={e => setFirstname(e.target.value)}/>
+  </Form.Group>
+  <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Label>Last Name</Form.Label>
+    <Form.Control type="email" size="lg" placeholder="Enter lastname" value = {Firstname} onChange={e => setLastname(e.target.value)}/>
+  </Form.Group>
+  <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Label>Email address</Form.Label>
+    <Form.Control type="email" size="lg" placeholder="Enter email" value = {Email} onChange={e => setUserEmail(e.target.value)}/>
+  </Form.Group>
+  <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Label>Phone</Form.Label>
+    <Form.Control type="email" size="lg" placeholder="Enter phone-number" value = {Firstname} onChange={e => setPhone(e.target.value)}/>
+  </Form.Group>
+  <Form.Group className="mb-3" controlId="formBasicPassword">
+    <Form.Label>Password</Form.Label>
+    <Form.Control type="password" size="lg" placeholder="Enter password" value = {Password} onChange={e => setPassword(e.target.value)}/>
+  </Form.Group>
+  <Form.Group className="mb-3" controlId="formBasicCheckbox">
+    <Form.Check type="checkbox" label="Check me out" />
+  </Form.Group>
+  <Button variant="primary" type="submit">
+    Submit
+  </Button>
+  <Form.Group id = 'txy' >
+  <Form.Text >
+  Already an existing user? <a href='' onClick={() => navigate('/')}>Signin</a>
+    </Form.Text>
+  </Form.Group>
+</Form>
             </div>
         </div>
+        <Navbar expand="lg" bg="dark" variant="dark">
+  <Container>
+  <p id ='footer-text'>&reg; fxt limited 2023</p>
+  </Container>
+</Navbar>
         </div>
     )
 }

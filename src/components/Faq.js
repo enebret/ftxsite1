@@ -431,7 +431,11 @@ function Faq () {
         </Row>
             </Container>
            
-            
+            <Navbar expand="lg" bg="dark" variant="dark">
+  <Container>
+  <p id ='footer-text'>&reg; fxt limited 2023</p>
+  </Container>
+</Navbar>
               
 
 

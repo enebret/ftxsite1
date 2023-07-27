@@ -77,3 +77,10 @@ margin-top: 8%;
 #txy{
     margin-top: 10%;
 }
+
+#footer-text{
+    color: #777;
+    margin-left: 45%;
+    text-align: left;
+    font-size:14px
+}

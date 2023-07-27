@@ -1,6 +1,5 @@
 /*jshint esversion: 8 */
 import React, {useEffect, useState} from 'react';
-import './signupStyles.css';
 import './styles/dashboard.css';
 import axios from 'axios';
 import './styles/aboutus.css';
@@ -30,6 +29,7 @@ function Dashboard () {
     const [authenticated, setAuthenticated] = useState(null);
     const navigate = useNavigate();
     var loggedInUser = localStorage.getItem('user')
+    var bal = localStorage.getItem('bal')
     useEffect(()=>{
         if(loggedInUser){
           setAuthenticated(loggedInUser);
@@ -48,17 +48,26 @@ function Dashboard () {
   <Container>
   <Navbar.Brand href="#home">FXT</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+
   <Navbar.Collapse id="responsive-navbar-nav">
-  <Nav.Link id = "logout" onClick={ () => {localStorage.clear();navigate('/')}}>Logout</Nav.Link>
   
+  <Nav.Link onClick={() => navigate('/aboutus')}>Deposit</Nav.Link>
+      <Nav.Link onClick={() => navigate('/investment')}>Withdraw</Nav.Link>
+      <Nav.Link id = "logout" onClick={ () => {localStorage.clear();navigate('/')}}>Logout</Nav.Link>
   </Navbar.Collapse>
   </Container>
 </Navbar>
        <div>
         <Container>
           <p>Welcome to your page {loggedInUser}</p>
+          <p>Your current investment balance is ${bal}</p>
         </Container>
        </div>
+       <Navbar expand="lg" bg="dark" variant="dark">
+  <Container>
+  <p id ='footer-text'>&reg; fxt limited 2023</p>
+  </Container>
+</Navbar>
         </div>
     )
 }

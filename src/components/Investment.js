@@ -159,7 +159,7 @@ function Investment () {
     <Card.Text  style={{ textAlign: 'center', }}>
     Personal Account Manager
     </Card.Text>
-    <Button variant="primary" style={{ marginLeft: '30%', }}>Invest Now</Button>  
+    <Button variant="primary" style={{ marginLeft: '30%', }} onClick={() => navigate('/signup')}>Invest Now</Button>  
   </Card.Body>
 </Card> </Row>
         </Col>
@@ -189,7 +189,7 @@ function Investment () {
     <Card.Text  style={{ textAlign: 'center', }}>
     Personal Account Manager
     </Card.Text>
-    <Button variant="primary" style={{ marginLeft: '30%', }}>Invest Now</Button>  
+    <Button variant="primary" style={{ marginLeft: '30%', }} onClick={() => navigate('/signup')}>Invest Now</Button>  
   </Card.Body>
 </Card>  
               </Row>
@@ -221,7 +221,7 @@ function Investment () {
           <Card.Text  style={{ textAlign: 'center', }}>
           Personal Account Manager
           </Card.Text>
-          <Button variant="primary" style={{ marginLeft: '30%', }}>Invest Now</Button>  
+          <Button variant="primary" style={{ marginLeft: '30%', }} onClick={() => navigate('/signup')}>Invest Now</Button>  
         </Card.Body>
       </Card>  
                     </Row>
@@ -253,7 +253,7 @@ function Investment () {
     <Card.Text  style={{ textAlign: 'center', }}>
     Personal Account Manager
     </Card.Text>
-    <Button variant="primary" style={{ marginLeft: '30%', }}>Invest Now</Button>  
+    <Button variant="primary" style={{ marginLeft: '30%', }} onClick={() => navigate('/signup')}>Invest Now</Button>  
   </Card.Body>
 </Card>  
               </Row>
@@ -268,7 +268,11 @@ function Investment () {
   </Row>
       </Container>
 
-
+      <Navbar expand="lg" bg="dark" variant="dark">
+  <Container>
+  <p id ='footer-text'>&reg; fxt limited 2023</p>
+  </Container>
+</Navbar>
           
         </div>
     )
