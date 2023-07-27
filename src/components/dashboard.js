@@ -49,18 +49,19 @@ function Dashboard () {
   <Navbar.Brand href="#home">FXT</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
-  <Navbar.Collapse id="responsive-navbar-nav">
+  <Navbar.Collapse id="responsive-navbar-nav" >
   
-  <Nav.Link onClick={() => navigate('/aboutus')}>Deposit</Nav.Link>
-      <Nav.Link onClick={() => navigate('/investment')}>Withdraw</Nav.Link>
-      <Nav.Link id = "logout" onClick={ () => {localStorage.clear();navigate('/')}}>Logout</Nav.Link>
+  <Nav.Link id='text' onClick={() => navigate('')}>Deposit</Nav.Link>
+      <Nav.Link id='text'  onClick={() => navigate('')}>Withdraw</Nav.Link>
+      <Nav.Link  id='text'  onClick={ () => {localStorage.clear();navigate('/')}}>Logout</Nav.Link>
+  
   </Navbar.Collapse>
   </Container>
 </Navbar>
        <div>
         <Container>
           <p>Welcome to your page {loggedInUser}</p>
-          <p>Your current investment balance is ${bal}</p>
+          <p>Your current investment balance is <span id='text-color'>${bal}.000</span></p>
         </Container>
        </div>
        <Navbar expand="lg" bg="dark" variant="dark">
