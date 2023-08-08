@@ -28,7 +28,8 @@ import inv from './pix/inv.png';
 function Dashboard () {
     const [authenticated, setAuthenticated] = useState(null);
     const navigate = useNavigate();
-    const url = "https://api3.binance.com/api/v3/avgPrice?symbol=";
+    //const url = "https://api3.binance.com/api/v3/avgPrice?symbol=";
+    const url = "https://api.coingecko.com/api/v3/coins/"
     const [btc, newBtc] = useState(null);
     const [th, newTH] = useState(null);
     const [ada, newAda] = useState(null);
@@ -38,14 +39,16 @@ function Dashboard () {
     useEffect(()=>{
         if(loggedInUser){
           setAuthenticated(loggedInUser);
+        } else {
+          navigate('/login')
         };
         async function getApi (){
           try{
             const adaReturnedPrice = await axios.get(url+"ADAUSDT");
             const adaPrice = parseFloat(adaReturnedPrice.data.price);
             newAda(adaPrice.toFixed(2));
-            const btcReturnedPrice = await axios.get(url+"BTCUSDT");
-            const btcPrice = parseFloat(btcReturnedPrice.data.price);
+            const btcReturnedPrice = await axios.get(url+"bitcoin?tickers=true");
+            const btcPrice = parseFloat(btcReturnedPrice.market_data.current_price.usd);
             newBtc(btcPrice.toFixed(2));
             const xrpReturnedPrice = await axios.get(url+"XRPUSDT");
             const xrpPrice = parseFloat(xrpReturnedPrice.data.price);
