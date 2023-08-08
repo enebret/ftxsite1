@@ -4,11 +4,13 @@
     color: #777;
 }
 
-#text-color{
-    color: #55ef7b;
-    font-family: system-ui;
-font-style: normal;
-font-weight: 500;
-size: 16px;
-line-height: 24px;
+#margin-b{
+    margin-bottom: 40%;
+    text-align: center;
+}
+
+#margin-c{
+    margin: auto;
+    color: #777;
+    font-size:14px
 }

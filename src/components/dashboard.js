@@ -45,8 +45,8 @@ function Dashboard () {
             const adaPrice = parseFloat(adaReturnedPrice.data.price);
             newAda(adaPrice.toFixed(2));
             const btcReturnedPrice = await axios.get(url+"BTCUSDT");
-            const btcPrice = parseInt(btcReturnedPrice.data.price);
-            newBtc(btcPrice);
+            const btcPrice = parseFloat(btcReturnedPrice.data.price);
+            newBtc(btcPrice.toFixed(2));
             const xrpReturnedPrice = await axios.get(url+"XRPUSDT");
             const xrpPrice = parseFloat(xrpReturnedPrice.data.price);
             newXRP(xrpPrice.toFixed(2));
@@ -83,10 +83,12 @@ function Dashboard () {
   </Navbar>
        <div>
         <Container>
-          <p>Welcome to your page {loggedInUser}</p>
+       <Row>
+       <p>Welcome to your page {loggedInUser}</p>
           <p>Your current investment balance is <span id='text-color'>${bal}.00</span></p>
           <p>coin prices in real time</p>
-      <div>
+       </Row>
+      <Row  id= 'margin-b'>
         <table>
           <tr>
            <td>cryptocurrency</td>
@@ -105,11 +107,16 @@ function Dashboard () {
            <td>${xrp}</td>
           </tr>
         </table>
-        </div>
+        </Row>
         </Container>
-       </div>
-  <p id ='footer-text'>&reg; fxt limited 2023</p>
-
+        <Navbar expand="lg" bg="dark" variant="dark">
+  <Container>
+  <Row id = 'margin-c'>
+  &reg; fxt limited 2023
+      </Row>
+  </Container>
+</Navbar>
+</div>
         </div>
     )
 }
