@@ -28,13 +28,36 @@ import inv from './pix/inv.png';
 function Dashboard () {
     const [authenticated, setAuthenticated] = useState(null);
     const navigate = useNavigate();
+    const url = "https://api3.binance.com/api/v3/avgPrice?symbol=";
+    const [btc, newBtc] = useState(null);
+    const [th, newTH] = useState(null);
+    const [ada, newAda] = useState(null);
+    const [xrp, newXRP] = useState(null);
     var loggedInUser = localStorage.getItem('user')
     var bal = localStorage.getItem('bal')
     useEffect(()=>{
         if(loggedInUser){
           setAuthenticated(loggedInUser);
-          
-        }
+        };
+        async function getApi (){
+          try{
+            const adaReturnedPrice = await axios.get(url+"ADAUSDT");
+            const adaPrice = parseFloat(adaReturnedPrice.data.price);
+            newAda(adaPrice);
+            const btcReturnedPrice = await axios.get(url+"BTCUSDT");
+            const btcPrice = parseInt(btcReturnedPrice.data.price);
+            newBtc(btcPrice);
+            const xrpReturnedPrice = await axios.get(url+"XRPUSDT");
+            const xrpPrice = parseInt(xrpReturnedPrice.data.price);
+            newXRP(xrpPrice);
+          }
+          catch (error) {
+            console.error(error)
+          }; 
+        };
+        setInterval(()=>{
+          getApi()
+        }, 3000)
     }, [])
     if(!authenticated){
       navigate('/login')
@@ -57,18 +80,36 @@ function Dashboard () {
   
   </Navbar.Collapse>
   </Container>
-</Navbar>
+  </Navbar>
        <div>
         <Container>
           <p>Welcome to your page {loggedInUser}</p>
-          <p>Your current investment balance is <span id='text-color'>${bal}.000</span></p>
+          <p>Your current investment balance is <span id='text-color'>${bal}.00</span></p>
+          <p>coin prices in real time</p>
+      <div>
+        <table>
+          <tr>
+           <td>cryptocurrency</td>
+           <td>price</td>
+          </tr>
+          <tr>
+          <td>bitcoin</td>
+          <td>${btc}</td>
+          </tr>
+          <tr>
+          <td>cardano</td>
+           <td>${ada}</td>
+          </tr>
+          <tr>
+          <td>ripple</td>
+           <td>${xrp}</td>
+          </tr>
+        </table>
+        </div>
         </Container>
        </div>
-       <Navbar expand="lg" bg="dark" variant="dark">
-  <Container>
   <p id ='footer-text'>&reg; fxt limited 2023</p>
-  </Container>
-</Navbar>
+
         </div>
     )
 }
