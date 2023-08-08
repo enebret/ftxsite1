@@ -43,13 +43,13 @@ function Dashboard () {
           try{
             const adaReturnedPrice = await axios.get(url+"ADAUSDT");
             const adaPrice = parseFloat(adaReturnedPrice.data.price);
-            newAda(adaPrice);
+            newAda(adaPrice.toFixed(2));
             const btcReturnedPrice = await axios.get(url+"BTCUSDT");
             const btcPrice = parseInt(btcReturnedPrice.data.price);
             newBtc(btcPrice);
             const xrpReturnedPrice = await axios.get(url+"XRPUSDT");
-            const xrpPrice = parseInt(xrpReturnedPrice.data.price);
-            newXRP(xrpPrice);
+            const xrpPrice = parseFloat(xrpReturnedPrice.data.price);
+            newXRP(xrpPrice.toFixed(2));
           }
           catch (error) {
             console.error(error)
