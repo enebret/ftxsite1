@@ -61,7 +61,7 @@ function Login () {
     return (
         <div>
                   <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-  <Container>
+  <Container >
   <Navbar.Brand href="#home">FXT</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
@@ -77,9 +77,11 @@ function Login () {
   </Navbar.Collapse>
   </Container>
 </Navbar>
-      <div class = 'signinDiv'>
-      <Form  onSubmit={handleSubmit}>
-  <Form.Group className="mb-3" controlId="formBasicEmail">
+      
+<Container >
+  <Row >
+  <Form  id="fs" onSubmit={handleSubmit}>
+  <Form.Group  className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
     <Form.Control type="email" placeholder="Enter email" value = {Email} onChange={e => setUserEmail(e.target.value)}/>
     <Form.Text className="text-muted">
@@ -90,19 +92,17 @@ function Login () {
     <Form.Label>Password</Form.Label>
     <Form.Control type="password" placeholder="Password" value = {Password} onChange={e => setPassword(e.target.value)}/>
   </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
-  </Form.Group>
   <Button variant="primary" type="submit">
     Signin
   </Button>
-  <Form.Group id = 'txy' >
+  <Form.Group>
   <Form.Text >
-  Don't have an account yet? <a href='' onClick={() => navigate('/signup')}>CREATE AN ACCOUNT NOW</a>
+  Don't have an account yet? <a href='' onClick={() => navigate('/signup')}>SIGN UP</a>
     </Form.Text>
   </Form.Group>
-</Form>
-        </div>        
+</Form>   
+  </Row>
+  </Container>  
         </div>
     )
 }

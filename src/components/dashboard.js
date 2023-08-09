@@ -153,9 +153,7 @@ function Dashboard () {
         </Container>
         <Navbar expand="lg" bg="dark" variant="dark">
   <Container>
-  <Row id = 'margin-c'>
-  &reg; fxt limited 2023
-      </Row>
+  <p id ='margin-c'>&reg; fxt limited 2023</p>
   </Container>
 </Navbar>
 </div>
