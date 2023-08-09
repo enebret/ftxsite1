@@ -2,6 +2,7 @@
 import React, {useEffect, useState} from 'react';
 import './styles/dashboard.css';
 import axios from 'axios';
+import Image from 'react-bootstrap/Image';
 import './styles/aboutus.css';
 import firstDiv from './util/aboutusimages/first_div.jpg';
 import vgDiv from './util/investment/undraw.png';
@@ -30,12 +31,37 @@ function Dashboard () {
     const navigate = useNavigate();
     //const url = "https://api3.binance.com/api/v3/avgPrice?symbol=";
     const url = "https://api.coingecko.com/api/v3/coins/"
+    const [btcLogo, newBtcLogo] = useState(null);
     const [btc, newBtc] = useState(null);
+    const [btcTwentyFourHigh, newBtcTwentyFourHigh] = useState(null);
+    const [btcTwentyFourLow, newBtcTwentyFourLow] = useState(null);
+    const [btcmarketCap, newBtcMarketCap] = useState(null);
     const [th, newTH] = useState(null);
     const [ada, newAda] = useState(null);
     const [xrp, newXRP] = useState(null);
-    var loggedInUser = localStorage.getItem('user')
-    var bal = localStorage.getItem('bal')
+    var loggedInUser = localStorage.getItem('user');
+    var bal = localStorage.getItem('bal');
+    async function getCoinData () {
+      let USDollar = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    });
+      const btcReturnedPrice = await axios.get(url+"bitcoin?tickers=true");
+            const btcPrice = parseFloat(btcReturnedPrice.data.market_data.current_price.usd);
+            const btcLogo = btcReturnedPrice.data.image.small;
+            newBtcLogo(btcLogo);
+            newBtc(USDollar.format(btcPrice));
+            const twentyFourHourHigh = btcReturnedPrice.data.market_data.high_24h.usd;
+            newBtcTwentyFourHigh(USDollar.format(twentyFourHourHigh))
+            const twentyFourHourLow = btcReturnedPrice.data.market_data.low_24h.usd;
+            newBtcTwentyFourLow(USDollar.format(twentyFourHourLow))
+            const marketCAp = btcReturnedPrice.data.market_data.market_cap.usd;
+            newBtcMarketCap(USDollar.format(marketCAp))
+            //const totalVol = btcReturnedPrice.data.market_data.total_volume.usd;
+            
+
+    };
+    getCoinData()
     useEffect(()=>{
         if(loggedInUser){
           setAuthenticated(loggedInUser);
@@ -48,7 +74,7 @@ function Dashboard () {
             const adaPrice = parseFloat(adaReturnedPrice.data.price);
             newAda(adaPrice.toFixed(2));
             const btcReturnedPrice = await axios.get(url+"bitcoin?tickers=true");
-            const btcPrice = parseFloat(btcReturnedPrice.market_data.current_price.usd);
+            const btcPrice = parseFloat(btcReturnedPrice.data.market_data.current_price.usd);
             newBtc(btcPrice.toFixed(2));
             const xrpReturnedPrice = await axios.get(url+"XRPUSDT");
             const xrpPrice = parseFloat(xrpReturnedPrice.data.price);
@@ -89,25 +115,33 @@ function Dashboard () {
        <Row>
        <p>Welcome to your page {loggedInUser}</p>
           <p>Your current investment balance is <span id='text-color'>${bal}.00</span></p>
-          <p>coin prices in real time</p>
+          <p>Top traded cryptocurrencies in real time</p>
        </Row>
       <Row  id= 'margin-b'>
         <table>
           <tr>
-           <td>cryptocurrency</td>
-           <td>price</td>
+            <td></td>
+           <td>Coin</td>
+           <td>Last Price</td>
+           <td>24H High</td>
+           <td>24H Low</td>
+           <td>Market Cap</td>
           </tr>
           <tr>
-          <td>bitcoin</td>
-          <td>${btc}</td>
+          <td><Image src={btcLogo} rounded /></td>
+          <td> <span style={{ fontWeight: 'bold'}}>Bitcoin</span> BTC</td>
+          <td>{btc}</td>
+          <td>{btcTwentyFourHigh}</td>
+          <td>{btcTwentyFourLow}</td>
+          <td>{btcmarketCap}</td>
           </tr>
           <tr>
           <td>cardano</td>
-           <td>${ada}</td>
+           <td>{ada}</td>
           </tr>
           <tr>
           <td>ripple</td>
-           <td>${xrp}</td>
+           <td>{xrp}</td>
           </tr>
         </table>
         </Row>
