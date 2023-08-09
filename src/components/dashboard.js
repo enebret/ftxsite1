@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import './styles/dashboard.css';
 import axios from 'axios';
 import Image from 'react-bootstrap/Image';
+import Table from 'react-bootstrap/Table';
 import './styles/aboutus.css';
 import firstDiv from './util/aboutusimages/first_div.jpg';
 import vgDiv from './util/investment/undraw.png';
@@ -118,8 +119,9 @@ function Dashboard () {
           <p>Top traded cryptocurrencies in real time</p>
        </Row>
       <Row  id= 'margin-b'>
-        <table>
-          <tr>
+      <Table striped bordered hover>
+         <thead>
+         <tr>
             <td></td>
            <td>Coin</td>
            <td>Last Price</td>
@@ -127,7 +129,9 @@ function Dashboard () {
            <td>24H Low</td>
            <td>Market Cap</td>
           </tr>
-          <tr>
+         </thead>
+      <tbody>
+      <tr>
           <td><Image src={btcLogo} rounded /></td>
           <td> <span style={{ fontWeight: 'bold'}}>Bitcoin</span> BTC</td>
           <td>{btc}</td>
@@ -143,7 +147,8 @@ function Dashboard () {
           <td>ripple</td>
            <td>{xrp}</td>
           </tr>
-        </table>
+      </tbody>
+          </Table>
         </Row>
         </Container>
         <Navbar expand="lg" bg="dark" variant="dark">
