@@ -2,7 +2,7 @@
 import React, {useState} from 'react';
 import './styles/signup.css';
 import axios from 'axios';
-import './styles/signup.css'
+import './styles/login.css'
 import firstDiv from './util/aboutusimages/first_div.jpg';
 import vgDiv from './util/investment/undraw.png';
 import pgDiv from './util/investment/external.png';
@@ -78,7 +78,7 @@ function Login () {
   </Container>
 </Navbar>
       <div class = 'signinDiv'>
-      <Form id = 'fc' onSubmit={handleSubmit}>
+      <Form  onSubmit={handleSubmit}>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
     <Form.Control type="email" placeholder="Enter email" value = {Email} onChange={e => setUserEmail(e.target.value)}/>
