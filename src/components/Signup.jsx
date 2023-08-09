@@ -132,7 +132,7 @@ function Signup () {
   </Button>
   <Form.Group id = 'txy' >
   <Form.Text >
-  Already an existing user? <a href='' onClick={() => navigate('/')}>Signin</a>
+  Already an existing user? <a href='' onClick={() => navigate('/login')}>Login</a>
     </Form.Text>
   </Form.Group>
 </Form>
