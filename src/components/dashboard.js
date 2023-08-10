@@ -2,6 +2,7 @@
 import React, {useEffect, useState} from 'react';
 import './styles/dashboard.css';
 import axios from 'axios';
+import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 import Table from 'react-bootstrap/Table';
@@ -30,6 +31,10 @@ import inv from './pix/inv.png';
 function Dashboard () {
     const [authenticated, setAuthenticated] = useState(null);
     const navigate = useNavigate();
+    //for first modal
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     //const url = "https://api3.binance.com/api/v3/avgPrice?symbol=";
     const url = "https://api.coingecko.com/api/v3/coins/"
     const [btcLogo, newBtcLogo] = useState(null);
@@ -241,8 +246,22 @@ function Dashboard () {
       </tbody>
       </Table>
       <Row id = 'dep-withd-row'>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
         <Col>
-        <Button variant="success" style={{ fontWeight: 'bold', marginBottom: '5%'}}>Deposit</Button>{' '}
+        <Button variant="success" style={{ fontWeight: 'bold', marginBottom: '5%'}} onClick={handleShow}>Deposit</Button>{' '}
         </Col>
         <Col>
         <Button variant="danger"  style={{ fontWeight: 'bold'}}>withdraw</Button>{' '}
