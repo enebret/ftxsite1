@@ -4,8 +4,28 @@
     color: #777;
 }
 
+#margin-text{
+    margin-top: 2%;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+#margin-text2{
+    margin-top: 2%;
+    font-weight: bold;
+    
+}
+
+#margin-a{
+    margin-top: 2%;
+    width: 40%;
+    color: #777;
+    text-align: center;
+    margin-bottom: 4%;
+}
+
 #margin-b{
-    margin-bottom: 40%;
+   
     text-align: center;
 }
 

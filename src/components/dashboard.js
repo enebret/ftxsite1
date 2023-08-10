@@ -57,6 +57,8 @@ function Dashboard () {
     const [usdtTwentyFourHigh, newUsdtTwentyFourHigh] = useState(null);
     const [usdtTwentyFourLow, newUsdtTwentyFourLow] = useState(null);
     const [usdtmarketCap, newUsdtMarketCap] = useState(null);
+    const [availableBal, newAvailableBal] = useState(null);
+    const [dailyProfit, newDailyProfit] = useState(null);
     var loggedInUser = localStorage.getItem('user');
     var bal = localStorage.getItem('bal');
     async function getCoinData () {
@@ -208,13 +210,11 @@ function Dashboard () {
       <div>
          <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Container>
-  <Navbar.Brand href="#home">FXT</Navbar.Brand>
+  <Navbar.Brand href="">FXT</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
   <Navbar.Collapse id="responsive-navbar-nav" >
   
-  <Nav.Link id='text' onClick={() => navigate('')}>Deposit</Nav.Link>
-      <Nav.Link id='text'  onClick={() => navigate('')}>Withdraw</Nav.Link>
       <Nav.Link  id='text'  onClick={ () => {localStorage.clear();navigate('/')}}>Logout</Nav.Link>
   
   </Navbar.Collapse>
@@ -222,10 +222,27 @@ function Dashboard () {
   </Navbar>
        <div>
         <Container>
-       <Row>
+       <Row id = 'margin-text'>
        <p>Welcome to your page {loggedInUser}</p>
-          <p>Your current investment balance is <span id='text-color'>${bal}.00</span></p>
-          <p>Top traded cryptocurrencies in real time</p>
+       </Row>
+       <Row id= 'margin-a'>
+       <Table>
+         <thead>
+         <tr>
+           <td><span style={{ fontWeight: 'bold'}}>Available Balance</span></td>
+           <td><span style={{ fontWeight: 'bold'}}>Daily Profit</span></td>
+           <td><span style={{ fontWeight: 'bold'}}>Estimated Monthly Profit</span></td>
+          </tr>
+         </thead>
+      <tbody>
+      <td >${bal}.00</td>
+           <td>0.00%</td>
+           <td>25%</td>
+      </tbody>
+      </Table>
+      <Row id = 'margin-text2'>
+      <p>Top traded cryptocurrencies in real time</p>
+      </Row>
        </Row>
       <Row  id= 'margin-b'>
       <Table striped bordered hover>
