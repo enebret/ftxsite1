@@ -196,7 +196,7 @@ function Dashboard () {
         };
         setInterval(()=>{
           getApi()
-        }, 3000)
+        }, 7000)
     }, [])
     if(!authenticated){
       navigate('/login')
@@ -250,7 +250,7 @@ function Dashboard () {
           </tr>
           <tr>
           <td><Image src={ethLogo} rounded /></td>
-          <td> <span style={{ fontWeight: 'bold'}}>Ethereum</span>ETH</td>
+          <td> <span style={{ fontWeight: 'bold'}}>Ethereum</span> ETH</td>
           <td>{eth}</td>
           <td>{ethTwentyFourHigh}</td>
           <td>{ethTwentyFourLow}</td>
@@ -258,7 +258,7 @@ function Dashboard () {
           </tr>
           <tr>
           <td><Image src={xrpLogo} rounded /></td>
-          <td> <span style={{ fontWeight: 'bold'}}>Ripple</span>XRP</td>
+          <td> <span style={{ fontWeight: 'bold'}}>Ripple</span> XRP</td>
           <td>{xrp}</td>
           <td>{xrpTwentyFourHigh}</td>
           <td>{xrpTwentyFourLow}</td>
@@ -266,7 +266,7 @@ function Dashboard () {
           </tr>
           <tr>
           <td><Image src={solLogo} rounded /></td>
-          <td> <span style={{ fontWeight: 'bold'}}>Solana</span>SOL</td>
+          <td> <span style={{ fontWeight: 'bold'}}>Solana</span> SOL</td>
           <td>{sol}</td>
           <td>{solTwentyFourHigh}</td>
           <td>{solTwentyFourLow}</td>
@@ -274,7 +274,7 @@ function Dashboard () {
           </tr>
           <tr>
           <td><Image src={usdtLogo} rounded /></td>
-          <td> <span style={{ fontWeight: 'bold'}}>Tether</span>USDT</td>
+          <td> <span style={{ fontWeight: 'bold'}}>Tether</span> USDT</td>
           <td>{usdt}</td>
           <td>{usdtTwentyFourHigh}</td>
           <td>{usdtTwentyFourLow}</td>
