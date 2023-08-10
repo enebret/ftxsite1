@@ -2,6 +2,7 @@
 import React, {useEffect, useState} from 'react';
 import './styles/dashboard.css';
 import axios from 'axios';
+import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 import Table from 'react-bootstrap/Table';
 import './styles/aboutus.css';
@@ -14,7 +15,6 @@ import qOption from './util/aboutusimages/q_option.png';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
@@ -57,8 +57,8 @@ function Dashboard () {
     const [usdtTwentyFourHigh, newUsdtTwentyFourHigh] = useState(null);
     const [usdtTwentyFourLow, newUsdtTwentyFourLow] = useState(null);
     const [usdtmarketCap, newUsdtMarketCap] = useState(null);
-    const [availableBal, newAvailableBal] = useState(null);
-    const [dailyProfit, newDailyProfit] = useState(null);
+    //const [availableBal, newAvailableBal] = useState(null);
+    //const [dailyProfit, newDailyProfit] = useState(null);
     var loggedInUser = localStorage.getItem('user');
     var bal = localStorage.getItem('bal');
     async function getCoinData () {
@@ -240,6 +240,14 @@ function Dashboard () {
            <td>25%</td>
       </tbody>
       </Table>
+      <Row id = 'dep-withd-row'>
+        <Col>
+        <Button variant="success" style={{ fontWeight: 'bold'}}>submit</Button>{' '}
+        </Col>
+        <Col>
+        <Button variant="danger"  style={{ fontWeight: 'bold'}}>withdraw</Button>{' '}
+        </Col>
+      </Row>
       <Row id = 'margin-text2'>
       <p>Top traded cryptocurrencies in real time</p>
       </Row>

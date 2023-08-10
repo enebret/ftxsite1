@@ -10,12 +10,6 @@
     margin-bottom: 2%;
 }
 
-#margin-text2{
-    margin-top: 2%;
-    font-weight: bold;
-    
-}
-
 #margin-a{
     margin-top: 2%;
     width: 40%;
@@ -23,6 +17,18 @@
     text-align: center;
     margin-bottom: 4%;
 }
+
+#dep-withd-row{
+  
+}
+
+#margin-text2{
+    margin-top: 2%;
+    font-weight: bold;
+    
+}
+
+
 
 #margin-b{
    
