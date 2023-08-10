@@ -242,7 +242,7 @@ function Dashboard () {
       </Table>
       <Row id = 'dep-withd-row'>
         <Col>
-        <Button variant="success" style={{ fontWeight: 'bold', marginBottom: '5%'}}>submit</Button>{' '}
+        <Button variant="success" style={{ fontWeight: 'bold', marginBottom: '5%'}}>Deposit</Button>{' '}
         </Col>
         <Col>
         <Button variant="danger"  style={{ fontWeight: 'bold'}}>withdraw</Button>{' '}
