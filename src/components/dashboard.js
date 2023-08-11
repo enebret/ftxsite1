@@ -33,8 +33,11 @@ function Dashboard () {
     const navigate = useNavigate();
     //for first modal
     const [show, setShow] = useState(false);
+    const [withdraw, setWithdraw] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const handleExit = () => setWithdraw(false);
+    const handleWithdraw = () => setWithdraw(true);
     //const url = "https://api3.binance.com/api/v3/avgPrice?symbol=";
     const url = "https://api.coingecko.com/api/v3/coins/"
     const [btcLogo, newBtcLogo] = useState(null);
@@ -245,24 +248,49 @@ function Dashboard () {
            <td>25%</td>
       </tbody>
       </Table>
-      <Row id = 'dep-withd-row'>
-      <Modal show={show} onHide={handleClose}>
+      
+      <Modal show={show}  backdrop="static" onHide={handleClose} size="lg"
+      aria-labelledby="contained-modal-title-vcenter" centered>
         <Modal.Header closeButton>
           <Modal.Title>Deposit Bitcoin to the address below</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+        <Modal.Body>bc1q3uwx58wtmxt7jqdnacr9v4ps7gteqk75xygmcw</Modal.Body>
         <Modal.Footer>
-          
           <Button variant="primary" onClick={handleClose}>
             Submit
           </Button>
         </Modal.Footer>
       </Modal>
+
+      <Modal
+        show={withdraw}
+        onHide={handleExit}
+        backdrop="static"
+        keyboard={false}
+        aria-labelledby="contained-modal-title-vcenter" centered
+        
+      >
+          <Form  id="ms" >
+  <Form.Group  className="mb-3" controlId="formBasicEmail">
+    <Form.Label>Enter wallet address</Form.Label>
+    <Form.Control type="text" placeholder="enter bitcoin address" />
+  </Form.Group>
+  <Form.Group className="mb-3" controlId="formBasicPassword">
+    <Form.Label>Enter amount</Form.Label>
+    <Form.Control type="text" placeholder="enter amount" />
+  </Form.Group>     
+  <Button variant="primary" type="submit">
+    Submit
+  </Button>
+
+</Form>   
+      </Modal>
+      <Row id = 'dep-withd-row'>
         <Col>
         <Button variant="success" style={{ fontWeight: 'bold', marginBottom: '5%'}} onClick={handleShow}>Deposit</Button>{' '}
         </Col>
         <Col>
-        <Button variant="danger"  style={{ fontWeight: 'bold'}}>withdraw</Button>{' '}
+        <Button variant="danger"  style={{ fontWeight: 'bold'}} onClick={handleWithdraw}>withdraw</Button>{' '}
         </Col>
       </Row>
       <Row id = 'margin-text2'>

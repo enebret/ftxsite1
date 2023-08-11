@@ -22,6 +22,15 @@
   
 }
 
+#ms {
+    color: blue;
+    width: 80%;
+    padding: 10%;
+    margin-left: auto;
+    margin-right: auto;
+        
+      }
+
 #margin-text2{
     margin-top: 2%;
     font-weight: bold;
@@ -40,3 +49,4 @@
     color: #777;
     font-size:14px
 }
+
