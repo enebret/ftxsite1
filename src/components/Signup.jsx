@@ -106,26 +106,23 @@ function Signup () {
                <Form id='form-ct' onSubmit={handleSubmit}>
                <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>First Name</Form.Label>
-    <Form.Control type="text" size="lg" placeholder="Enter firstname" value = {Firstname} onChange={e => setFirstname(e.target.value)}/>
+    <Form.Control type="text" size="lg" placeholder="enter firstname" value = {Firstname} onChange={e => setFirstname(e.target.value)}/>
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Last Name</Form.Label>
-    <Form.Control type="text" size="lg" placeholder="Enter lastname" value = {Lastname} onChange={e => setLastname(e.target.value)}/>
+    <Form.Control type="text" size="lg" placeholder="enter lastname" value = {Lastname} onChange={e => setLastname(e.target.value)}/>
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" size="lg" placeholder="Enter email" value = {Email} onChange={e => setUserEmail(e.target.value)}/>
+    <Form.Control type="email" size="lg" placeholder="enter email" value = {Email} onChange={e => setUserEmail(e.target.value)}/>
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Phone</Form.Label>
-    <Form.Control type="text" size="lg" placeholder="Enter phone-number" value = {Phone} onChange={e => setPhone(e.target.value)}/>
+    <Form.Control type="text" size="lg" placeholder="enter phone-number" value = {Phone} onChange={e => setPhone(e.target.value)}/>
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicPassword">
     <Form.Label>Password</Form.Label>
-    <Form.Control type="password" size="lg" placeholder="Enter password" value = {Password} onChange={e => setPassword(e.target.value)}/>
-  </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
+    <Form.Control type="password" size="lg" placeholder="enter password" value = {Password} onChange={e => setPassword(e.target.value)}/>
   </Form.Group>
   <Button variant="primary" type="submit">
     Submit
