@@ -34,8 +34,9 @@ function Login () {
           email: Email,
           password: Password
         };
-
-        axios.post('http://localhost:5045/user/signin', user)
+        //https://ftx-server-backup.eneikenna.repl.co/signin
+        //http://localhost:5045/user/signin
+        axios.post('https://ftx-server-backup.eneikenna.repl.co/user/signin', user)
         .then(response => {
           if(response.data){
             var data = response.data

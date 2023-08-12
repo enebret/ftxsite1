@@ -10,12 +10,17 @@
     margin-bottom: 2%;
 }
 
+.justify-content-md-center{
+ padding: 5%;
+}
+
 #margin-a{
     margin-top: 2%;
     width: 40%;
+    margin-left: 35%;
     color: #777;
     text-align: center;
-    margin-bottom: 4%;
+    
 }
 
 #dep-withd-row{
@@ -32,7 +37,7 @@
       }
 
 #margin-text2{
-    margin-top: 2%;
+    margin-top: 10%;
     font-weight: bold;
     
 }

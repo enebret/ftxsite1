@@ -220,21 +220,24 @@ function Dashboard () {
   <Container>
   <Navbar.Brand href="">FXT</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-
   <Navbar.Collapse id="responsive-navbar-nav" >
-  
-      <Nav.Link  id='text'  onClick={ () => {localStorage.clear();navigate('/')}}>Logout</Nav.Link>
-  
+  <Nav className="me-auto">
+  <Nav.Link  id='text' onClick={handleShow} >Deposit</Nav.Link>
+  <Nav.Link  id='text'  onClick={handleWithdraw}>Withdraw</Nav.Link>
+  </Nav>
+  <Nav>
+  <Nav.Link  style={{ marginRight: '80%'}} onClick={ () => {localStorage.clear();navigate('/')}}>Logout</Nav.Link>
+  </Nav>
   </Navbar.Collapse>
   </Container>
   </Navbar>
        <div>
-        <Container>
+        <Container fluid>
        <Row id = 'margin-text'>
        <p>Welcome to your page {loggedInUser}</p>
        </Row>
-       <Row id= 'margin-a'>
-       <Table>
+       <Row  className="justify-content-md-center ">
+       <Table striped bordered hover>
          <thead>
          <tr>
            <td><span style={{ fontWeight: 'bold'}}>Available Balance</span></td>
@@ -285,20 +288,13 @@ function Dashboard () {
 
 </Form>   
       </Modal>
-      <Row id = 'dep-withd-row'>
-        <Col>
-        <Button variant="success" style={{ fontWeight: 'bold', marginBottom: '5%'}} onClick={handleShow}>Deposit</Button>{' '}
-        </Col>
-        <Col>
-        <Button variant="danger"  style={{ fontWeight: 'bold'}} onClick={handleWithdraw}>withdraw</Button>{' '}
-        </Col>
-      </Row>
+      
       <Row id = 'margin-text2'>
-      <p>Top traded cryptocurrencies in real time</p>
+      <p  >Top traded cryptocurrencies in real time</p>
       </Row>
        </Row>
       <Row  id= 'margin-b'>
-      <Table striped bordered hover>
+      <Table responsive striped bordered hover variant="dark">
          <thead>
          <tr>
             <td></td>
@@ -355,7 +351,7 @@ function Dashboard () {
         </Row>
         </Container>
         <Navbar expand="lg" bg="dark" variant="dark">
-  <Container>
+  <Container fluid>
   <p id ='margin-c'>&reg; fxt limited 2023</p>
   </Container>
 </Navbar>
