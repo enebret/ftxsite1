@@ -234,7 +234,7 @@ function Dashboard () {
        <div>
         <Container fluid>
        <Row id = 'margin-text'>
-       <p>Welcome to your page {loggedInUser}</p>
+       <p>Welcome to your dashboard {loggedInUser}</p>
        </Row>
        <Row  className="justify-content-md-center ">
        <Table striped bordered hover>

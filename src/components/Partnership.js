@@ -86,7 +86,7 @@ function Partnership () {
               <Row id = 'tf'>
             <h2 id = 'btr0'>Use the leverage of <span style={{ color: 'green',  fontWeight: '1000'}}>Referrals</span></h2>
             <Row md={6}>
-            <Button variant="primary" type="submit"  style={{ backgroundColor: '#fff',  fontWeight: '600', color: 'green', border: 'none',}}>
+            <Button variant="primary" type="submit"  onClick={() => navigate('/signup')} style={{ backgroundColor: '#fff',  fontWeight: '600', color: 'green', border: 'none',}}>
                   START EARNING TODAY
               </Button>
             </Row>
@@ -115,7 +115,7 @@ function Partnership () {
             <Col md={4}></Col>
           </Row>
           <Row md={5} id = 'btr4'>
-              <Button variant="primary" type="submit"  style={{ backgroundColor: 'green',  fontWeight: '600', border: 'none'}}>
+              <Button variant="primary" type="submit" onClick={() => navigate('/signup')} style={{ backgroundColor: 'green',  fontWeight: '600', border: 'none'}}>
                   GET STARTED TODAY
               </Button>
               </Row>

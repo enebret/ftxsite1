@@ -41,7 +41,7 @@ function Login () {
           if(response.data){
             var data = response.data
             var {firstname, lastname, balance} = data;
-            let fullname = firstname + " "+lastname;
+            let fullname = firstname;
             localStorage.setItem('user', fullname);
               localStorage.setItem('bal', balance);
             navigate('/dashboard'); //navigate to dashboard with user details passed as prop parameters

@@ -82,9 +82,10 @@ function Signup () {
       <Nav.Link onClick={() => navigate('/platform')}>Platform</Nav.Link>
       <Nav.Link onClick={() => navigate('/partnership')}>Partnership</Nav.Link>
       <Nav.Link onClick={() => navigate('/contactus')}>Contact us</Nav.Link>
- 
     </Nav>
-   
+    <Nav>
+  <Nav.Link  style={{ marginRight: '80%'}} onClick={ () => {localStorage.clear();navigate('/')}}>Login</Nav.Link>
+  </Nav>
   </Navbar.Collapse>
   </Container>
 </Navbar>
@@ -106,11 +107,11 @@ function Signup () {
                <Form id='form-ct' onSubmit={handleSubmit}>
                <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>First Name</Form.Label>
-    <Form.Control type="text" size="lg" placeholder="enter firstname" value = {Firstname} onChange={e => setFirstname(e.target.value)}/>
+    <Form.Control type="text" size="lg" placeholder="enter first name" value = {Firstname} onChange={e => setFirstname(e.target.value)}/>
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Last Name</Form.Label>
-    <Form.Control type="text" size="lg" placeholder="enter lastname" value = {Lastname} onChange={e => setLastname(e.target.value)}/>
+    <Form.Control type="text" size="lg" placeholder="enter last name" value = {Lastname} onChange={e => setLastname(e.target.value)}/>
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
@@ -118,7 +119,7 @@ function Signup () {
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Phone</Form.Label>
-    <Form.Control type="text" size="lg" placeholder="enter phone-number" value = {Phone} onChange={e => setPhone(e.target.value)}/>
+    <Form.Control type="text" size="lg" placeholder="enter phone-number eg.+17007489934" value = {Phone} onChange={e => setPhone(e.target.value)}/>
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicPassword">
     <Form.Label>Password</Form.Label>
