@@ -230,9 +230,8 @@ function Body () {
       <Card.Img variant="top" src="/pix/ke.png" style={{ height: 'auto', width: 'auto', marginLeft: '25%'}}/>
       <Card.Title style={{ textAlign: 'center', }}>PAUL BLISS</Card.Title>
       <Card.Text  style={{ textAlign: 'center', }}>
-      I am in a group who has made a number of investments in FXT LTD. I find them to be quite knowledgeable and professional about their business. They run it profitably, and they pay on time.
-          </Card.Text>
-  
+      Within our investment circle, we have chosen to invest in FXT LTD. The team's extensive knowledge and exceptional professionalism have left a lasting impression on me. 
+      </Card.Text>
         </Card.Body>
           </Card> 
           </Col>
@@ -243,7 +242,7 @@ function Body () {
       <Card.Img variant="top" src="/pix/kate.png" style={{ height: 'auto', width: 'auto', marginLeft: '25%'}}/>
       <Card.Title style={{ textAlign: 'center', }}>MATHIAS KATE</Card.Title>
       <Card.Text  style={{ textAlign: 'center', }}>
-      I am in a group who has made a number of investments in FXT LTD. I find them to be quite knowledgeable and professional about their business. They run it profitably, and they pay on time.
+      I am part of a consortium that has strategically diversified our portfolio into FXT LTD. I am thoroughly impressed by their remarkable expertise and unwavering commitment to excellence in their field. 
           </Card.Text>
   
         </Card.Body>

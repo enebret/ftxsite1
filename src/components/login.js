@@ -82,16 +82,16 @@ function Login () {
 <Container >
   <Row >
   <Form  id="fs" onSubmit={handleSubmit}>
-  <Form.Group  className="mb-3" controlId="formBasicEmail">
+  <Form.Group  className="mb-3" controlId="validationCustom03">
     <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" value = {Email} onChange={e => setUserEmail(e.target.value)}/>
+    <Form.Control type="email" placeholder="Enter email" required value = {Email} onChange={e => setUserEmail(e.target.value)}/>
     <Form.Text className="text-muted">
       We'll never share your email with anyone else.
     </Form.Text>
   </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicPassword">
+  <Form.Group className="mb-3" controlId="validationCustom03">
     <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" value = {Password} onChange={e => setPassword(e.target.value)}/>
+    <Form.Control type="password" placeholder="Password" requiredus value = {Password} onChange={e => setPassword(e.target.value)}/>
   </Form.Group>
   <Button variant="primary" type="submit">
     Signin

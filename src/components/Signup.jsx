@@ -21,6 +21,8 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import Feedback from 'react-bootstrap/Feedback';
 import vw from './pix/vw.jpg';
 import droid from './pix/droid.png';
 import inv from './pix/inv.png';
@@ -48,16 +50,23 @@ function Signup () {
           .then(response => {
             if(response.data){
               var data = response.data
+              if(data.firstname == undefined){
+                  console.log('incorrect email');
+                  navigate('/signup')
+                  setUserEmail('')
+                  setFirstname('')
+                  setLastname('')
+                  setPhone('')
+                  setPassword('')
+              }
+             else if (data.firstname){
               var {firstname, lastname, balance} = data;
-              let fullname = firstname + " "+lastname
-              console.log(fullname)
-              localStorage.setItem('user', fullname);
+              let fname = firstname
+              console.log(fname)
+              localStorage.setItem('user', fname);
               localStorage.setItem('bal', balance);
-              navigate('/dashboard'); //navigate to dashboard with user details passed as prop parameters
-            }else if(response.data&&response.data=='this email is an existing user email or you are already a registered user.Kindly enter your email and password to login into your dashboard'){
-              //display error msg to user here by updating the dom inform of a caution message drop down stating the error message
-              console.log(response.data);
-              navigate('/login');
+              navigate('/dashboard'); 
+             }
             }
           })
           
@@ -89,41 +98,32 @@ function Signup () {
   </Navbar.Collapse>
   </Container>
 </Navbar>
-        <div class='signupmaindiv'>
-            <div class = 'subdiv'>
-           {/*<form onSubmit={handleSubmit}>
-              <label for="firstname">Firstname</label>
-              <input type="text" name = 'firstname' value = {Firstname} onChange={e => setFirstname(e.target.value)}></input>
-              <label for="lastname">Lastname</label>
-              <input type="text" name = 'lastname' value = {Lastname} onChange={e => setLastname(e.target.value)}></input>
-              <label for="email">Email</label>
-              <input type="text" name = 'email' value = {Email} onChange={e => setUserEmail(e.target.value)}></input>
-              <label for="username">Phone</label>
-              <input type="text" name = 'username' value = {Phone} onChange={e => setPhone(e.target.value)}></input>
-              <label for="password">password</label>
-              <input type="text" name = 'Password' value = {Password} onChange={e => setPassword(e.target.value)}></input>
-              <input type="submit" value="Submit"></input>
-              </form>*/} 
-               <Form id='form-ct' onSubmit={handleSubmit}>
-               <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Container fluid >
+            <Row lg={6} >
+           
+               <Form id='subdiv' onSubmit={handleSubmit}>
+               <Form.Group className="mb-3" controlId="validationCustom03">
     <Form.Label>First Name</Form.Label>
-    <Form.Control type="text" size="lg" placeholder="enter first name" value = {Firstname} onChange={e => setFirstname(e.target.value)}/>
+    <Form.Control type="text" size="lg" placeholder="enter first name" required value = {Firstname} onChange={e => setFirstname(e.target.value)}/>
+    <Form.Control.Feedback type="invalid">
+            Please provide a valid city.
+          </Form.Control.Feedback>
   </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicEmail">
+  <Form.Group className="mb-3" controlId="validationCustom03">
     <Form.Label>Last Name</Form.Label>
-    <Form.Control type="text" size="lg" placeholder="enter last name" value = {Lastname} onChange={e => setLastname(e.target.value)}/>
+    <Form.Control type="text" size="lg" placeholder="enter last name" required value = {Lastname} onChange={e => setLastname(e.target.value)}/>
   </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicEmail">
+  <Form.Group className="mb-3" controlId="validationCustom03">
     <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" size="lg" placeholder="enter email" value = {Email} onChange={e => setUserEmail(e.target.value)}/>
+    <Form.Control type="email" size="lg" placeholder="enter email" required value = {Email} onChange={e => setUserEmail(e.target.value)}/>
   </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicEmail">
+  <Form.Group className="mb-3" controlId="validationCustom03">
     <Form.Label>Phone</Form.Label>
-    <Form.Control type="text" size="lg" placeholder="enter phone-number eg.+17007489934" value = {Phone} onChange={e => setPhone(e.target.value)}/>
+    <Form.Control type="text" size="lg" placeholder="enter phone-number eg.+17007489934" required value = {Phone} onChange={e => setPhone(e.target.value)}/>
   </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicPassword">
+  <Form.Group className="mb-3" controlId="validationCustom03">
     <Form.Label>Password</Form.Label>
-    <Form.Control type="password" size="lg" placeholder="enter password" value = {Password} onChange={e => setPassword(e.target.value)}/>
+    <Form.Control type="password" size="lg" placeholder="enter password" value = {Password} required  onChange={e => setPassword(e.target.value)}/>
   </Form.Group>
   <Button variant="primary" type="submit">
     Submit
@@ -134,8 +134,8 @@ function Signup () {
     </Form.Text>
   </Form.Group>
 </Form>
-            </div>
-        </div>
+            </Row>
+        </Container>
         <Navbar expand="lg" bg="dark" variant="dark">
   <Container>
   <p id ='footer-text'>&reg; fxt limited 2023</p>

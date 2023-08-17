@@ -1,11 +1,10 @@
-.subdiv{
-    padding-top: 10%;
-    padding-left: 30%;
-    padding-right: 30%;
-    padding-bottom: 20%;
+#subdiv{
+margin: auto;
 }
-#form-ct{
-    margin-left: auto;
-    margin-right: auto;
+#footer-text{
+    color: #777;
+  margin: auto;
+    text-align: center;
+    font-size:14px
 }
 
