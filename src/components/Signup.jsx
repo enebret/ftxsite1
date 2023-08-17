@@ -43,8 +43,8 @@ function Signup () {
             phone: Phone,
             password: Password
           };
-
-          axios.post('http://localhost:5045/user/signup', user)
+              //http://localhost:5045/user/signup
+          axios.post('https://ftx-server-backup.eneikenna.repl.co/user/signup', user)
           .then(response => {
             if(response.data){
               var data = response.data
