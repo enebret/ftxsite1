@@ -21,6 +21,7 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
+import Alert from 'react-bootstrap/Alert';
 import vw from './pix/vw.jpg';
 import droid from './pix/droid.png';
 import inv from './pix/inv.png';
@@ -28,6 +29,7 @@ function Login () {
   const navigate = useNavigate();
   const [Email, setUserEmail] = useState('');
   const [Password, setPassword] = useState('');
+  const [show, setShow] = useState(false);
   const handleSubmit = (e) => {
       e.preventDefault();
       const user = {
@@ -46,9 +48,12 @@ function Login () {
               localStorage.setItem('bal', balance);
             navigate('/dashboard'); //navigate to dashboard with user details passed as prop parameters
           }else if(response.data&&response.data=='incorrect user password, try again'){
+            //setUserEmail('');
             //display error msg to user here by updating the dom inform of a caution message drop down stating the error message
             console.log(response.data);
             navigate('/login');
+            setPassword('')
+            setShow(true);
           }
         })
         
@@ -78,10 +83,17 @@ function Login () {
   </Navbar.Collapse>
   </Container>
 </Navbar>
-      
-<Container >
-  <Row >
-  <Form  id="fs" onSubmit={handleSubmit}>
+{
+  show? <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+  <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
+  <p>
+   You entered an incorrect password. Please try again.
+  </p>
+</Alert> : ''
+}
+<Container fluid  id='form-container'>
+  <Col lg={5} id="fs">
+  <Form   onSubmit={handleSubmit}>
   <Form.Group  className="mb-3" controlId="validationCustom03">
     <Form.Label>Email address</Form.Label>
     <Form.Control type="email" placeholder="Enter email" required value = {Email} onChange={e => setUserEmail(e.target.value)}/>
@@ -102,8 +114,9 @@ function Login () {
     </Form.Text>
   </Form.Group>
 </Form>   
-  </Row>
+  </Col>
   </Container>  
+  
         </div>
     )
 }

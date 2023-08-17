@@ -1,9 +1,18 @@
-
+#form-container{
+  padding-top:7%;
+  
+}
 #fs {
-color: blue;
-width: 50%;
-margin-top: 10%;
-margin-left: auto;
-margin-right: auto;
+  margin: auto;
     
   }
+  
+  #footer-text{
+    margin: auto;
+    color: #777;
+    font-size:14px
+}
+
+#bnav{
+  margin: auto;
+}

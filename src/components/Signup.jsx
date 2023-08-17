@@ -21,6 +21,7 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
+import Alert from 'react-bootstrap/Alert';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Feedback from 'react-bootstrap/Feedback';
 import vw from './pix/vw.jpg';
@@ -33,7 +34,7 @@ function Signup () {
     const [Firstname, setFirstname] = useState('');
     const [Lastname, setLastname] = useState('');
     const [Phone, setPhone] = useState('');
-
+    const [show, setShow] = useState(false);
     const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -58,6 +59,7 @@ function Signup () {
                   setLastname('')
                   setPhone('')
                   setPassword('')
+                  setShow(true);
               }
              else if (data.firstname){
               var {firstname, lastname, balance} = data;
@@ -75,6 +77,9 @@ function Signup () {
         });
 
         };
+        if(show) {
+          
+        }
 //dashboard component should be here and the user details be passed as props to the dashboard component once there is a response from the backend
     return (
       <div>
@@ -98,12 +103,22 @@ function Signup () {
   </Navbar.Collapse>
   </Container>
 </Navbar>
-        <Container fluid >
-            <Row lg={6} >
-           
-               <Form id='subdiv' onSubmit={handleSubmit}>
+
+{
+  show? <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+  <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
+  <p>
+   Kindly signin as you already have a registered account with us
+  </p>
+</Alert> : ''
+}
+        <Container fluid id='form-container' >
+          
+           <Col lg = {5} id = 'subdiv'>
+               <Form   onSubmit={handleSubmit}>
                <Form.Group className="mb-3" controlId="validationCustom03">
     <Form.Label>First Name</Form.Label>
+  
     <Form.Control type="text" size="lg" placeholder="enter first name" required value = {Firstname} onChange={e => setFirstname(e.target.value)}/>
     <Form.Control.Feedback type="invalid">
             Please provide a valid city.
@@ -111,19 +126,27 @@ function Signup () {
   </Form.Group>
   <Form.Group className="mb-3" controlId="validationCustom03">
     <Form.Label>Last Name</Form.Label>
+    
     <Form.Control type="text" size="lg" placeholder="enter last name" required value = {Lastname} onChange={e => setLastname(e.target.value)}/>
+    
   </Form.Group>
   <Form.Group className="mb-3" controlId="validationCustom03">
     <Form.Label>Email address</Form.Label>
+    
     <Form.Control type="email" size="lg" placeholder="enter email" required value = {Email} onChange={e => setUserEmail(e.target.value)}/>
+    
   </Form.Group>
   <Form.Group className="mb-3" controlId="validationCustom03">
     <Form.Label>Phone</Form.Label>
-    <Form.Control type="text" size="lg" placeholder="enter phone-number eg.+17007489934" required value = {Phone} onChange={e => setPhone(e.target.value)}/>
+  
+   <Form.Control type="text" size="lg" placeholder="enter phone-number eg.+17007489934" required value = {Phone} onChange={e => setPhone(e.target.value)}/>
+   
   </Form.Group>
   <Form.Group className="mb-3" controlId="validationCustom03">
     <Form.Label>Password</Form.Label>
+   
     <Form.Control type="password" size="lg" placeholder="enter password" value = {Password} required  onChange={e => setPassword(e.target.value)}/>
+   
   </Form.Group>
   <Button variant="primary" type="submit">
     Submit
@@ -134,7 +157,7 @@ function Signup () {
     </Form.Text>
   </Form.Group>
 </Form>
-            </Row>
+</Col>   
         </Container>
         <Navbar expand="lg" bg="dark" variant="dark">
   <Container>
