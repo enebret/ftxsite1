@@ -32,8 +32,11 @@ function Login () {
   const [Password, setPassword] = useState('');
   const [show, setShow] = useState(false);
   const [spinner, setSpinner] = useState(false);
+  const [waiter, setWaiter] = useState(false)
   const handleSubmit = (e) => {
       e.preventDefault();
+      const y = ()=>setWaiter(true);
+      y()
       const user = {
           email: Email,
           password: Password
@@ -92,6 +95,15 @@ function Login () {
   </p>
 </Alert> : ''
 }
+
+{
+  waiter? <Alert variant="success" onClose={() => setShow(false)} dismissible>
+  <p>
+   Kindly wait while we process your information
+  </p>
+</Alert> : ''
+}
+
 <Container fluid  id='form-container'>
   <Col lg={5} id="fs">
   <Form   onSubmit={handleSubmit}>
