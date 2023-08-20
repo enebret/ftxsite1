@@ -233,20 +233,20 @@ function Dashboard () {
   </Container>
   </Navbar>
        <div>
-        <Container fluid>
+        <Container id = 'main' fluid>
        <Row id = 'margin-text'>
-       <p>Welcome to your dashboard {loggedInUser}</p>
+       <p>Welcome to your dashboard <span style={{fontWeight: '700', color: 'rgb(33, 37, 41)'}}>{loggedInUser}</span></p>
        </Row>
        <Row  className="justify-content-md-center ">
        <Table striped bordered hover>
-         <thead>
+         <thead style={{ fontWeight: '700', color: 'rgb(33, 37, 41)', textAlign: 'center'}}>
          <tr>
-           <td><span style={{ fontWeight: 'bold'}}>Available Balance</span></td>
-           <td><span style={{ fontWeight: 'bold'}}>Daily Profit</span></td>
-           <td><span style={{ fontWeight: 'bold'}}>Estimated Monthly Profit</span></td>
+           <td><span >Available Balance</span></td>
+           <td><span >Daily Profit</span></td>
+           <td><span >Estimated Monthly Profit</span></td>
           </tr>
          </thead>
-      <tbody>
+      <tbody  style={{textAlign: 'center'}}>
       <td >${bal}.00</td>
            <td>0.00%</td>
            <td>25%</td>
