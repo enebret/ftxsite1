@@ -40,7 +40,7 @@ function Login () {
         };
         //https://ftx-server-backup.eneikenna.repl.co/signin
         //http://localhost:5045/user/signin
-        axios.post('https://ftx-server-backup.eneikenna.repl.co/signin', user)
+        axios.post('https://ftx-server-backup-1.eneikenna.repl.co/user/signin', user)
         .then(response => {
           if(!response.data.firstname){
             console.log(response.data);
@@ -48,14 +48,14 @@ function Login () {
             setPassword('')
             setShow(true);
           }
-        else   if(response.data){
-          var data = response.data
-          var {firstname, lastname, balance} = data;
-          let fullname = firstname;
-          localStorage.setItem('user', fullname);
-            localStorage.setItem('bal', balance);
-          navigate('/dashboard'); //navigate to dashboard with user details passed as prop parameters
-        }
+        else if(response.data){
+            var data = response.data
+            var {firstname, lastname, balance} = data;
+            let fullname = firstname;
+            localStorage.setItem('user', fullname);
+              localStorage.setItem('bal', balance);
+            navigate('/dashboard'); //navigate to dashboard with user details passed as prop parameters
+          }
         })
         
         .catch(err => {
