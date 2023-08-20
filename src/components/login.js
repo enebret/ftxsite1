@@ -40,23 +40,22 @@ function Login () {
         };
         //https://ftx-server-backup.eneikenna.repl.co/signin
         //http://localhost:5045/user/signin
-        axios.post('https://ftx-server-backup.eneikenna.repl.co/user/signin', user)
+        axios.post('https://ftx-server-backup.eneikenna.repl.co/signin', user)
         .then(response => {
-          if(response.data){
-            var data = response.data
-            var {firstname, lastname, balance} = data;
-            let fullname = firstname;
-            localStorage.setItem('user', fullname);
-              localStorage.setItem('bal', balance);
-            navigate('/dashboard'); //navigate to dashboard with user details passed as prop parameters
-          }else if(response.data&&response.data=='incorrect user password, try again'){
-            //setUserEmail('');
-            //display error msg to user here by updating the dom inform of a caution message drop down stating the error message
+          if(!response.data.firstname){
             console.log(response.data);
             navigate('/login');
             setPassword('')
             setShow(true);
           }
+        else   if(response.data){
+          var data = response.data
+          var {firstname, lastname, balance} = data;
+          let fullname = firstname;
+          localStorage.setItem('user', fullname);
+            localStorage.setItem('bal', balance);
+          navigate('/dashboard'); //navigate to dashboard with user details passed as prop parameters
+        }
         })
         
         .catch(err => {
