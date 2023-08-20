@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e5ec85e5.css",
+    "main.js": "/static/js/main.192db6c1.js",
+    "static/js/787.62c2baf3.chunk.js": "/static/js/787.62c2baf3.chunk.js",
+    "static/media/abk.png": "/static/media/abk.af0b2b04da7ce34a9099.png",
+    "static/media/first_png.png": "/static/media/first_png.109211c72180a1c4680c.png",
+    "static/media/ab.jpg": "/static/media/ab.894adf086c0082c913b7.jpg",
+    "static/media/first_div.jpg": "/static/media/first_div.2a08b84874fb44af0862.jpg",
+    "static/media/fourth_div.jpg": "/static/media/fourth_div.aa209813b3dd3f4ddcbd.jpg",
+    "static/media/second_div.jpg": "/static/media/second_div.957e6f9873759ab26334.jpg",
+    "static/media/spreadsheet.png": "/static/media/spreadsheet.51b66dced924bf4955d4.png",
+    "static/media/q_option.png": "/static/media/q_option.31762bfb9c2afc0d42a5.png",
+    "static/media/lapy.jpg": "/static/media/lapy.925c0294701a64b818a3.jpg",
+    "static/media/cal.jpeg": "/static/media/cal.8f181c5ac00485035ca2.jpeg",
+    "static/media/mp.png": "/static/media/mp.6dd097a66d8872b9986e.png",
+    "static/media/mapy.png": "/static/media/mapy.4dd03e911d7025050f49.png",
+    "static/media/usplash.jpg": "/static/media/usplash.86935f92cd8ec716fea4.jpg",
+    "static/media/remote.png": "/static/media/remote.6cbe44251e009b7bc87a.png",
+    "static/media/pca.png": "/static/media/pca.9bb8b82efd943d69d65e.png",
+    "static/media/vw.jpg": "/static/media/vw.4d568c17b2ac1ce6c8b7.jpg",
+    "static/media/wrm.png": "/static/media/wrm.2d980458c037f3c59193.png",
+    "static/media/cryptocurrency.png": "/static/media/cryptocurrency.d7f62e32032a6358b21d.png",
+    "static/media/ec.png": "/static/media/ec.a6addb9d553f577a12de.png",
+    "static/media/droid.png": "/static/media/droid.f5744e99984f246d27be.png",
+    "static/media/fx.png": "/static/media/fx.90decb4bb96b41bcdfee.png",
+    "static/media/wb.jpg": "/static/media/wb.dbbbedc31b12385f8ecc.jpg",
+    "static/media/fq.jpg": "/static/media/fq.9e83cb01c3e402f5cbc0.jpg",
+    "static/media/slack.png": "/static/media/slack.0eceb4490d3c2853a457.png",
+    "static/media/undraw.png": "/static/media/undraw.3e4b194a2fe9740b9eb6.png",
+    "static/media/logo.JPG": "/static/media/logo.e921d9757d458ea94fe6.JPG",
+    "static/media/external.png": "/static/media/external.93a82da30589cf9d48f1.png",
+    "index.html": "/index.html",
+    "main.e5ec85e5.css.map": "/static/css/main.e5ec85e5.css.map",
+    "main.192db6c1.js.map": "/static/js/main.192db6c1.js.map",
+    "787.62c2baf3.chunk.js.map": "/static/js/787.62c2baf3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e5ec85e5.css",
+    "static/js/main.192db6c1.js"
+  ]
+}
