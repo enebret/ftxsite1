@@ -6,6 +6,7 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 import Table from 'react-bootstrap/Table';
+import CloseButton from 'react-bootstrap/CloseButton';
 import './styles/aboutus.css';
 import firstDiv from './util/aboutusimages/first_div.jpg';
 import vgDiv from './util/investment/undraw.png';
@@ -267,13 +268,14 @@ function Dashboard () {
 
       <Modal
         show={withdraw}
-        onHide={handleExit}
+        //onHide={handleExit}
         backdrop="static"
         keyboard={false}
         aria-labelledby="contained-modal-title-vcenter" centered
         
       >
           <Form  id="ms" >
+          <CloseButton style={{ marginLeft: '90%'}} onClick={() => {setWithdraw(false)}}/>
   <Form.Group  className="mb-3" controlId="formBasicEmail">
     <Form.Label>Enter wallet address</Form.Label>
     <Form.Control type="text" placeholder="enter bitcoin address" />
