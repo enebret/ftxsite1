@@ -22,6 +22,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
+import Spinner from 'react-bootstrap/Spinner';
 import vw from './pix/vw.jpg';
 import droid from './pix/droid.png';
 import inv from './pix/inv.png';
@@ -30,6 +31,7 @@ function Login () {
   const [Email, setUserEmail] = useState('');
   const [Password, setPassword] = useState('');
   const [show, setShow] = useState(false);
+  const [spinner, setSpinner] = useState(false);
   const handleSubmit = (e) => {
       e.preventDefault();
       const user = {
@@ -115,8 +117,13 @@ function Login () {
   </Form.Group>
 </Form>   
   </Col>
+
   </Container>  
-  
+  <Navbar style={{marginTop: '100%', color:'#777',  }} expand="lg" bg="dark" variant="dark">
+ 
+ <p style={{textAlign:'center', margin:'auto'}}>&reg; fxt limited 2023</p>
+ 
+</Navbar>
         </div>
     )
 }

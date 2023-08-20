@@ -22,6 +22,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
+import Spinner from 'react-bootstrap/Spinner';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Feedback from 'react-bootstrap/Feedback';
 import vw from './pix/vw.jpg';
@@ -35,9 +36,16 @@ function Signup () {
     const [Lastname, setLastname] = useState('');
     const [Phone, setPhone] = useState('');
     const [show, setShow] = useState(false);
+    const [spinner, setSpinner] = useState(false);
+    const [waiter, setWaiter] = useState(false)
+    //const handleSpinner = ()=>(setSpinner(true))
     const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
+        const x = ()=>setSpinner(true)
+        const y = ()=>setWaiter(true)
+        x();
+        y();
         const user = {
             firstname: Firstname,
             lastname: Lastname,
@@ -58,8 +66,10 @@ function Signup () {
                   setFirstname('')
                   setLastname('')
                   setPhone('')
-                  setPassword('')
+                  setPassword('');
                   setShow(true);
+                  setSpinner(false);
+                  setWaiter(false)
               }
              else if (data.firstname){
               var {firstname, lastname, balance} = data;
@@ -112,6 +122,15 @@ function Signup () {
   </p>
 </Alert> : ''
 }
+
+{
+  waiter? <Alert variant="success" onClose={() => setShow(false)} dismissible>
+  <p>
+   Kindly wait while we process your information
+  </p>
+</Alert> : ''
+}
+
         <Container fluid id='form-container' >
           
            <Col lg = {5} id = 'subdiv'>
@@ -139,8 +158,10 @@ function Signup () {
   <Form.Group className="mb-3" controlId="validationCustom03">
     <Form.Label>Phone</Form.Label>
   
-   <Form.Control type="text" size="lg" placeholder="enter phone-number eg.+17007489934" required value = {Phone} onChange={e => setPhone(e.target.value)}/>
-   
+   <Form.Control type="text" size="lg" placeholder="enter phone-number eg.+17007489934" required value = {Phone} isInvalid={!Phone.match(/\+?[1-9][0-9]{7,14}/g)} onChange={e => setPhone(e.target.value)}/>
+   <Form.Control.Feedback type="invalid">
+                  Please enter number in the required format eg. +17007489934
+                </Form.Control.Feedback>
   </Form.Group>
   <Form.Group className="mb-3" controlId="validationCustom03">
     <Form.Label>Password</Form.Label>
@@ -148,9 +169,21 @@ function Signup () {
     <Form.Control type="password" size="lg" placeholder="enter password" value = {Password} required  onChange={e => setPassword(e.target.value)}/>
    
   </Form.Group>
-  <Button variant="primary" type="submit">
+  {
+    spinner?   <Button variant="primary" disabled>
+    <Spinner
+      as="span"
+      animation="border"
+      size="sm"
+      role="status"
+      aria-hidden="true"
+    />
+    Loading...
+  </Button>:  <Button variant="primary" type="submit">
     Submit
   </Button>
+  }
+ 
   <Form.Group id = 'txy' >
   <Form.Text >
   Already an existing user? <a href='' onClick={() => navigate('/login')}>Login</a>
@@ -159,7 +192,7 @@ function Signup () {
 </Form>
 </Col>   
         </Container>
-        <Navbar expand="lg" bg="dark" variant="dark">
+        <Navbar style={{marginTop: '100%', }} expand="lg" bg="dark" variant="dark">
   <Container>
   <p id ='footer-text'>&reg; fxt limited 2023</p>
   </Container>
