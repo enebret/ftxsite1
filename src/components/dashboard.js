@@ -249,7 +249,7 @@ function Dashboard () {
          </thead>
       <tbody  style={{textAlign: 'center'}}>
       <td >${bal}.00</td>
-           <td  style={{ color: 'rgb(113,201,70)'}}>${pr}</td>
+           <td >${pr}</td>
            <td>25%</td>
       </tbody>
       </Table>
