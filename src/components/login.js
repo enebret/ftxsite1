@@ -53,7 +53,7 @@ function Login () {
           }
         else if(response.data){
             var data = response.data
-            var {firstname, lastname, balance, profit} = data;
+            var {firstname, balance, profit} = data;
             let fullname = firstname;
             localStorage.setItem('user', fullname);
               localStorage.setItem('bal', balance);

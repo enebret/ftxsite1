@@ -49,7 +49,8 @@ function Signup () {
         const user = {
             firstname: Firstname,
             lastname: Lastname,
-            balance: 0,
+            balance: '0',
+            profit: '0',
             email: Email,
             phone: Phone,
             password: Password
@@ -72,11 +73,12 @@ function Signup () {
                   setWaiter(false)
               }
              else if (data.firstname){
-              var {firstname, lastname, balance} = data;
+              var {firstname, lastname, profit, balance} = data;
               let fname = firstname
               console.log(fname)
               localStorage.setItem('user', fname);
               localStorage.setItem('bal', balance);
+              localStorage.setItem('pr', profit);
               navigate('/dashboard'); 
              }
             }
