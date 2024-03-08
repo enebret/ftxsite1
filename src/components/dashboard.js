@@ -70,6 +70,7 @@ function Dashboard () {
     //const [dailyProfit, newDailyProfit] = useState(null);
     var loggedInUser = localStorage.getItem('user');
     var bal = localStorage.getItem('bal');
+    var pr = localStorage.getItem('pr');
     async function getCoinData () {
       let USDollar = new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -207,7 +208,7 @@ function Dashboard () {
         };
         setInterval(()=>{
           getApi()
-        }, 7000)
+        }, 3000)
     }, [])
     if(!authenticated){
       navigate('/login')
@@ -242,13 +243,13 @@ function Dashboard () {
          <thead style={{ fontWeight: '700', color: 'rgb(33, 37, 41)', textAlign: 'center'}}>
          <tr>
            <td><span >Available Balance</span></td>
-           <td><span >Daily Profit</span></td>
+           <td><span >Weekly Profit</span></td>
            <td><span >Estimated Monthly Profit</span></td>
           </tr>
          </thead>
       <tbody  style={{textAlign: 'center'}}>
       <td >${bal}.00</td>
-           <td>0.00%</td>
+           <td>${pr}%</td>
            <td>25%</td>
       </tbody>
       </Table>

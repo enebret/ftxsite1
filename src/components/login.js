@@ -53,10 +53,11 @@ function Login () {
           }
         else if(response.data){
             var data = response.data
-            var {firstname, lastname, balance} = data;
+            var {firstname, lastname, balance, profit} = data;
             let fullname = firstname;
             localStorage.setItem('user', fullname);
               localStorage.setItem('bal', balance);
+              localStorage.setItem('pr', profit);
             navigate('/dashboard'); //navigate to dashboard with user details passed as prop parameters
           }
         })
